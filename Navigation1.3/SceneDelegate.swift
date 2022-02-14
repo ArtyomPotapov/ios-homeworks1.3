@@ -14,7 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
+       // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -24,6 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         vc.view.backgroundColor = .systemPink
         let nvc = UINavigationController(rootViewController: vc)
         nvc.tabBarItem.title = "FEED"
+
         nvc.tabBarItem.image = UIImage(systemName: "pencil.circle")!
         
         let svc = ViewController()
@@ -31,7 +32,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let snvc = UINavigationController(rootViewController: svc)
         snvc.tabBarItem.title = "PROFILE"
         snvc.tabBarItem.image = UIImage(systemName: "person")!
-        
         let tbc = UITabBarController()
         tbc.view.backgroundColor = .systemBackground
         
