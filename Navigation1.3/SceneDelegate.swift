@@ -20,25 +20,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
         
-        let vc = ViewController()
-        vc.view.backgroundColor = .systemPink
-        let nvc = UINavigationController(rootViewController: vc)
-        nvc.tabBarItem.title = "FEED"
-
-        nvc.tabBarItem.image = UIImage(systemName: "pencil.circle")!
+        //let vc = ViewController()
         
-        let svc = ViewController()
-        svc.view.backgroundColor = .systemMint
-        let snvc = UINavigationController(rootViewController: svc)
-        snvc.tabBarItem.title = "PROFILE"
-        snvc.tabBarItem.image = UIImage(systemName: "person")!
-        let tbc = UITabBarController()
-        tbc.view.backgroundColor = .systemBackground
+        let feedViewController = FeedViewController()
+        let firstNavigationController = UINavigationController(rootViewController: feedViewController)
+        firstNavigationController.tabBarItem.title = "FEED"
+        firstNavigationController.tabBarItem.image = UIImage(systemName: "pencil.circle")!
         
-        tbc.viewControllers = [nvc, snvc]
+        let profileViewController = ProfileViewController()
+        let secondNavigationController = UINavigationController(rootViewController: profileViewController)
+        secondNavigationController.tabBarItem.title = "PROFILE"
+        secondNavigationController.tabBarItem.image = UIImage(systemName: "person")!
+        let tabBarController = UITabBarController()
+        tabBarController.view.backgroundColor = .systemBackground
+        
+        tabBarController.viewControllers = [firstNavigationController, secondNavigationController]
         UITabBar.appearance().barTintColor = .systemBackground
-        tbc.tabBar.tintColor = .label
-        window?.rootViewController = tbc
+        tabBarController.tabBar.tintColor = .label
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         
         
