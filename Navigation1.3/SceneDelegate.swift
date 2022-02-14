@@ -21,14 +21,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         
         let vc = ViewController()
-        vc.view.backgroundColor = .red
+        vc.view.backgroundColor = .systemPink
         let nvc = UINavigationController(rootViewController: vc)
-        nvc.tabBarItem.title = "first"
+        nvc.tabBarItem.title = "FEED"
+        nvc.tabBarItem.image = UIImage(systemName: "pencil.circle")!
         
         let svc = ViewController()
-        svc.view.backgroundColor = .systemBlue
+        svc.view.backgroundColor = .systemMint
         let snvc = UINavigationController(rootViewController: svc)
-        snvc.tabBarItem.title = "second"
+        snvc.tabBarItem.title = "PROFILE"
+        snvc.tabBarItem.image = UIImage(systemName: "person")!
         
         let tbc = UITabBarController()
         tbc.view.backgroundColor = .systemBackground
