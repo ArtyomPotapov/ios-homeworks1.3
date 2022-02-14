@@ -24,6 +24,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let feedViewController = FeedViewController()
         let firstNavigationController = UINavigationController(rootViewController: feedViewController)
+//        let postVC = PostViewController()
+//        firstNavigationController.addChild(postVC)
         firstNavigationController.tabBarItem.title = "FEED"
         firstNavigationController.tabBarItem.image = UIImage(systemName: "pencil.circle")!
         

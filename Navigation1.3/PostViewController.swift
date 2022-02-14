@@ -8,12 +8,17 @@
 import UIKit
 
 class PostViewController: UIViewController {
-
+    var closure: (() -> String)?
+    var titlePost = "post"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Мой пост"
         view.backgroundColor = .systemYellow
-        // Do any additional setup after loading the view.
+        title = titlePost
+//        guard let closure = closure else {return}
+//        title = closure()
+        
+
     }
     
 
