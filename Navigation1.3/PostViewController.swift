@@ -17,10 +17,14 @@ class PostViewController: UIViewController {
         title = titlePost
 //        guard let closure = closure else {return}
 //        title = closure()
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(showInfoVC))
 
     }
     
+    @objc func showInfoVC(){
+let infoVC = InfoViewController()
+        present(infoVC, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
