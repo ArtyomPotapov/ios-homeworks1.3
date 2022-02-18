@@ -33,8 +33,6 @@ class ProfileHeaderView: UIView {
            addSubview(myView)
                myView.frame = self.frame
                myView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-//               myView.backgroundColor = .lightGray
-               
        }
         
     }
