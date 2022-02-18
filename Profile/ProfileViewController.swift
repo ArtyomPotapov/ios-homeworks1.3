@@ -14,7 +14,6 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .lightGray
-        navigationController?.navigationBar.prefersLargeTitles = true
         title = "Профиль"
 
     }
@@ -22,6 +21,7 @@ class ProfileViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         view.addSubview(profileHeaderView)
+        profileHeaderView.frame = self.view.bounds
     }
 
 }

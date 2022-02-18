@@ -18,7 +18,6 @@ var titlePost = Post(title: "Переданный текст")
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemMint
-        navigationController?.navigationBar.prefersLargeTitles = true
         title = "Лента"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Пост", style:  .plain, target: self, action: #selector(prepareToPost))
 
