@@ -17,21 +17,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
         
-        let feedViewController = FeedViewController()
-        let firstNavigationController = UINavigationController(rootViewController: feedViewController)
-        firstNavigationController.tabBarItem.title = "FEED"
-        firstNavigationController.tabBarItem.image = UIImage(systemName: "pencil.circle")!
         
-        let profileViewController = ProfileViewController()
-        let secondNavigationController = UINavigationController(rootViewController: profileViewController)
-        secondNavigationController.tabBarItem.title = "PROFILE"
-        secondNavigationController.tabBarItem.image = UIImage(systemName: "person")!
-        let tabBarController = UITabBarController()
-        tabBarController.view.backgroundColor = .systemBackground
+        let tabBarController = TabBar()
         
-        tabBarController.viewControllers = [firstNavigationController, secondNavigationController]
-        UITabBar.appearance().barTintColor = .systemBackground
-        tabBarController.tabBar.tintColor = .label
+        
+        
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         
