@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileHeaderView" customModule="Navigation1_3" customModuleProvider="target">
             <connections>
                 <outlet property="myPhoto" destination="1Ph-AL-aPK" id="5zo-fu-ehJ"/>
+                <outlet property="showStatusButton" destination="em5-kJ-dfi" id="6sg-03-fDl"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -38,7 +39,7 @@
                         <constraint firstAttribute="height" constant="50" id="TkK-KN-bRS"/>
                     </constraints>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain"/>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="cdf-mI-WuM"/>
