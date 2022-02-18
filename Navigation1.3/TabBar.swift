@@ -14,7 +14,7 @@ class TabBar: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        UITabBar.appearance().barTintColor = .systemBackground
+        UITabBar.appearance().barTintColor = .white
         self.tabBar.tintColor = .label
         setNavigationControllers()
         
@@ -28,7 +28,8 @@ class TabBar: UITabBarController {
         let secondNavigationController = UINavigationController(rootViewController: profileViewController)
         secondNavigationController.tabBarItem.title = "PROFILE"
         secondNavigationController.tabBarItem.image = UIImage(systemName: "person")!
-
+        
+        
         self.viewControllers = [firstNavigationController, secondNavigationController]
     }
 
