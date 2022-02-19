@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileHeaderView" customModule="Navigation1_3" customModuleProvider="target">
             <connections>
                 <outlet property="myPhoto" destination="1Ph-AL-aPK" id="5zo-fu-ehJ"/>
+                <outlet property="myTextField" destination="o7I-S8-l9N" id="XhS-UD-lzh"/>
                 <outlet property="showStatusButton" destination="em5-kJ-dfi" id="6sg-03-fDl"/>
             </connections>
         </placeholder>
@@ -27,7 +28,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cat Musya" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fae-6g-q0t">
-                    <rect key="frame" x="155" y="71" width="90.5" height="21"/>
+                    <rect key="frame" x="156" y="71" width="90.5" height="21"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -41,17 +42,27 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain"/>
                 </button>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="status" placeholder="Waiting for something..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o7I-S8-l9N">
+                    <rect key="frame" x="156" y="143.5" width="154" height="18.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <viewLayoutGuide key="safeArea" id="cdf-mI-WuM"/>
-            <color key="backgroundColor" systemColor="systemGrayColor"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="1Ph-AL-aPK" firstAttribute="trailing" secondItem="o7I-S8-l9N" secondAttribute="leading" constant="-20" id="2bx-vd-L9w"/>
                 <constraint firstItem="1Ph-AL-aPK" firstAttribute="top" secondItem="cdf-mI-WuM" secondAttribute="top" constant="16" id="2cO-Td-O8p"/>
                 <constraint firstItem="Fae-6g-q0t" firstAttribute="top" secondItem="cdf-mI-WuM" secondAttribute="top" constant="27" id="AMR-ww-iIv"/>
-                <constraint firstItem="Fae-6g-q0t" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="EQb-m8-2vF"/>
+                <constraint firstItem="em5-kJ-dfi" firstAttribute="top" secondItem="o7I-S8-l9N" secondAttribute="bottom" constant="34" id="Jqe-RC-suY"/>
                 <constraint firstItem="cdf-mI-WuM" firstAttribute="trailing" secondItem="em5-kJ-dfi" secondAttribute="trailing" constant="16" id="TXL-Hj-Kdr"/>
                 <constraint firstItem="em5-kJ-dfi" firstAttribute="leading" secondItem="cdf-mI-WuM" secondAttribute="leading" constant="16" id="cfT-5f-UjW"/>
                 <constraint firstItem="1Ph-AL-aPK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="dJn-d9-Ogh"/>
                 <constraint firstItem="em5-kJ-dfi" firstAttribute="top" secondItem="1Ph-AL-aPK" secondAttribute="bottom" constant="16" id="fjG-LI-Iuj"/>
+                <constraint firstItem="Fae-6g-q0t" firstAttribute="leading" secondItem="1Ph-AL-aPK" secondAttribute="trailing" constant="20" id="i2L-gk-Y7g"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="137.68115942028987" y="81.696428571428569"/>
@@ -61,9 +72,6 @@
         <image name="musya" width="675" height="900"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

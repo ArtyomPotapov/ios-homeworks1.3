@@ -12,9 +12,10 @@ class ProfileHeaderView: UIView {
     @IBOutlet weak var myPhoto: UIImageView!
     @IBOutlet weak var showStatusButton: UIButton!
     
+    @IBOutlet weak var myTextField: UITextField!
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .lightGray
+//        self.backgroundColor = .lightGray
         addXib()
         myPhoto.layer.cornerRadius = myPhoto.frame.size.width / 2
         myPhoto.clipsToBounds = true
@@ -31,6 +32,7 @@ class ProfileHeaderView: UIView {
         showStatusButton.layer.shadowColor = UIColor.black.cgColor
         showStatusButton.layer.shadowOffset = CGSize(width: 4, height: 4)
         showStatusButton.layer.shadowRadius = 4
+        showStatusButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
         
     }
     
@@ -46,6 +48,16 @@ class ProfileHeaderView: UIView {
                myView.frame = self.frame
                myView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
        }
+        
+    }
+    
+    @objc func tappedButton(){
+        if myTextField.text != "" {
+            print(myTextField.text ?? "123")
+        }
+        else  {
+            print("пустая строка")
+        }
         
     }
 }
