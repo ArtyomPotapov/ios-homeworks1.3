@@ -9,15 +9,17 @@ import UIKit
 
 class ProfileHeaderView: UIView {
 
-    @IBOutlet weak var myPhoto: UIImageView!
+    @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var showStatusButton: UIButton!
     
+    @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var buttonTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var myTextField: UITextField!
-    @IBOutlet weak var newTextField: UITextField!
+    @IBOutlet weak var statusTextField: UITextField!
+    @IBOutlet weak var setStatusTextField: UITextField!
     
     private var isButtonAbove = true
     private var buttonTitle = "Set status"
+    var delegate: ViewExpandable?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,10 +44,10 @@ class ProfileHeaderView: UIView {
     }
     
     private func setMyPhoto(){
-        myPhoto.layer.cornerRadius = myPhoto.frame.size.width / 2
-        myPhoto.clipsToBounds = true
-        myPhoto.layer.borderColor = UIColor.white.cgColor
-        myPhoto.layer.borderWidth = 3
+        avatarImageView.layer.cornerRadius = avatarImageView.frame.size.width / 2
+        avatarImageView.clipsToBounds = true
+        avatarImageView.layer.borderColor = UIColor.white.cgColor
+        avatarImageView.layer.borderWidth = 3
     }
     
     private func setshowStatusButton(){
@@ -64,26 +66,29 @@ class ProfileHeaderView: UIView {
     }
     
     private func setnewTextField(){
-        newTextField.layer.cornerRadius = 12
-        newTextField.layer.borderWidth = 1
-        newTextField.layer.borderColor = UIColor.black.cgColor
-        newTextField.clipsToBounds = true
+        setStatusTextField.layer.cornerRadius = 12
+        setStatusTextField.layer.borderWidth = 1
+        setStatusTextField.layer.borderColor = UIColor.black.cgColor
+        setStatusTextField.clipsToBounds = true
     }
     
     @objc func tappedButton(){
         if !isButtonAbove {
-            myTextField.text = newTextField.text ?? ""
+            statusTextField.text = setStatusTextField.text ?? ""
         }
         
         buttonTopConstraint.constant = isButtonAbove ? 100 : 16
         buttonTitle = isButtonAbove ? "Show status" : "Set status"
         
-        UIView.animate(withDuration: 0.2) {
-            self.layoutIfNeeded()
-        } completion: { _ in
+        
+//        UIView.animate(withDuration: 0.2) {
+//            self.layoutIfNeeded()
+//        } completion: { _ in
+            self.delegate?.expandedView(isExpand: self.isButtonAbove)
             self.isButtonAbove.toggle()
             self.showStatusButton.setTitle(self.buttonTitle, for: .normal)
             self.showStatusButton.setTitle(self.buttonTitle, for: .highlighted)
-        }
+            
+//        }
     }
 }
