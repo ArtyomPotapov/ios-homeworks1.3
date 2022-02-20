@@ -17,6 +17,8 @@ class ProfileHeaderView: UIView {
     @IBOutlet weak var statusTextField: UITextField!
     @IBOutlet weak var setStatusTextField: UITextField!
     
+    
+    
     private var isButtonAbove = true
     private var buttonTitle = "Set status"
     var delegate: ViewExpandable?
@@ -79,16 +81,10 @@ class ProfileHeaderView: UIView {
         
         buttonTopConstraint.constant = isButtonAbove ? 100 : 16
         buttonTitle = isButtonAbove ? "Show status" : "Set status"
-        
-        
-//        UIView.animate(withDuration: 0.2) {
-//            self.layoutIfNeeded()
-//        } completion: { _ in
             self.delegate?.expandedView(isExpand: self.isButtonAbove)
             self.isButtonAbove.toggle()
             self.showStatusButton.setTitle(self.buttonTitle, for: .normal)
             self.showStatusButton.setTitle(self.buttonTitle, for: .highlighted)
             
-//        }
     }
 }

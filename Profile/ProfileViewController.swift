@@ -12,6 +12,14 @@ protocol ViewExpandable: AnyObject {
 
 class ProfileViewController: UIViewController {
     
+    private lazy var newButton: UIButton = {
+        var button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("New button from HW2.2", for: .normal)
+        button.backgroundColor = .systemRed
+        return button
+    }()
+    
     
     var heightViewConstraint: NSLayoutConstraint?
     private lazy var profileHeaderView: ProfileHeaderView = {
@@ -26,6 +34,7 @@ class ProfileViewController: UIViewController {
         view.backgroundColor = .white
         title = "Профиль"
         view.addSubview(profileHeaderView)
+        view.addSubview(newButton)
         activateConstraints()
     }
     
@@ -39,8 +48,11 @@ class ProfileViewController: UIViewController {
         let leadingConstraint = profileHeaderView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
         let trailConstraint = profileHeaderView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
         heightViewConstraint =  profileHeaderView.heightAnchor.constraint(equalToConstant: 220)
+        let newButtonLeading = newButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
+        let newButtomTrailing = newButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+        let newButtomBottom = newButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
         
-        NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailConstraint, heightViewConstraint].compactMap({$0}))
+        NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailConstraint, heightViewConstraint, newButtomBottom, newButtonLeading, newButtomTrailing].compactMap({$0}))
     }
     
 }
