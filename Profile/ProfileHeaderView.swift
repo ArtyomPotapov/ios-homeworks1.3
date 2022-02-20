@@ -11,13 +11,10 @@ class ProfileHeaderView: UIView {
 
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var showStatusButton: UIButton!
-    
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var buttonTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var statusTextField: UITextField!
     @IBOutlet weak var setStatusTextField: UITextField!
-    
-    
     
     private var isButtonAbove = true
     private var buttonTitle = "Set status"

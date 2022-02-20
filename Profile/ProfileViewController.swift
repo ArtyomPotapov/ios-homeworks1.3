@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 protocol ViewExpandable: AnyObject {
     func expandedView(isExpand: Bool)
 }
@@ -19,7 +20,6 @@ class ProfileViewController: UIViewController {
         button.backgroundColor = .systemRed
         return button
     }()
-    
     
     var heightViewConstraint: NSLayoutConstraint?
     private lazy var profileHeaderView: ProfileHeaderView = {
@@ -38,11 +38,6 @@ class ProfileViewController: UIViewController {
         activateConstraints()
     }
     
-//    override func viewWillLayoutSubviews() {
-//        super.viewWillLayoutSubviews()
-//
-//    }
-    
     func activateConstraints(){
         let topConstraint = profileHeaderView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
         let leadingConstraint = profileHeaderView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
@@ -54,19 +49,15 @@ class ProfileViewController: UIViewController {
         
         NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailConstraint, heightViewConstraint, newButtomBottom, newButtonLeading, newButtomTrailing].compactMap({$0}))
     }
-    
 }
 
 extension ProfileViewController: ViewExpandable {
     func expandedView(isExpand: Bool) {
         heightViewConstraint?.constant = isExpand ? 300 : 220
-        
         UIView.animate(withDuration: 0.2) {
             self.view.layoutIfNeeded()
             print(isExpand)
             print(self.heightViewConstraint!)
-        } completion: { _ in
-           
         }
     }
 }
