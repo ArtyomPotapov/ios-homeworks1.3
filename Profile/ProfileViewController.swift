@@ -53,7 +53,7 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController: ViewExpandable {
     func expandedView(isExpand: Bool) {
-        heightViewConstraint?.constant = isExpand ? 300 : 220
+        heightViewConstraint?.constant = isExpand ? 500 : 220
         UIView.animate(withDuration: 0.2) {
             self.view.layoutIfNeeded()
             print(isExpand)
