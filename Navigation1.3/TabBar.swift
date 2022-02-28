@@ -10,7 +10,7 @@ import UIKit
 class TabBar: UITabBarController {
     let feedViewController = FeedViewController()
     let profileViewController = ProfileViewController()
-    
+    let logInViewController = LogInViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -25,7 +25,7 @@ class TabBar: UITabBarController {
         firstNavigationController.tabBarItem.title = "FEED"
         firstNavigationController.tabBarItem.image = UIImage(systemName: "pencil.circle")!
         
-        let secondNavigationController = UINavigationController(rootViewController: profileViewController)
+        let secondNavigationController = UINavigationController(rootViewController: logInViewController)    //profileViewController)
         secondNavigationController.tabBarItem.title = "PROFILE"
         secondNavigationController.tabBarItem.image = UIImage(systemName: "person")!
         

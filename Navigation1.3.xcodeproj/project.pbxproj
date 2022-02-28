@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5086D29927CC553900EBB547 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5086D29827CC553900EBB547 /* LogInViewController.swift */; };
 		50A2FF9727BAE50D006A437C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A2FF9627BAE50D006A437C /* AppDelegate.swift */; };
 		50A2FF9927BAE50D006A437C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A2FF9827BAE50D006A437C /* SceneDelegate.swift */; };
 		50A2FFA027BAE513006A437C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50A2FF9F27BAE513006A437C /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5086D29827CC553900EBB547 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		50A2FF9327BAE50D006A437C /* Navigation1.3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation1.3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A2FF9627BAE50D006A437C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50A2FF9827BAE50D006A437C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				50A2FF9627BAE50D006A437C /* AppDelegate.swift */,
+				5086D29827CC553900EBB547 /* LogInViewController.swift */,
 				50A2FF9827BAE50D006A437C /* SceneDelegate.swift */,
 				50A2FFB227C018A0006A437C /* TabBar.swift */,
 				50A2FFAE27BB1001006A437C /* PostViewController.swift */,
@@ -163,6 +166,7 @@
 			files = (
 				50A2FFAF27BB1001006A437C /* PostViewController.swift in Sources */,
 				50A2FFB627C02BA2006A437C /* ProfileHeaderView.swift in Sources */,
+				5086D29927CC553900EBB547 /* LogInViewController.swift in Sources */,
 				50A2FF9727BAE50D006A437C /* AppDelegate.swift in Sources */,
 				50A2FFB127BB21E9006A437C /* InfoViewController.swift in Sources */,
 				50A2FFAD27BB0F10006A437C /* ProfileViewController.swift in Sources */,
