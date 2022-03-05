@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class LogInViewController: UIViewController {
+class LogInViewController: UIViewController, UITextFieldDelegate {
     
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
@@ -29,6 +29,9 @@ class LogInViewController: UIViewController {
         stackView.distribution = .fillProportionally
         stackView.backgroundColor = .systemGray6
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+//        stackView.endEditing(true)
+        
         return stackView
     }()
     
@@ -41,6 +44,7 @@ class LogInViewController: UIViewController {
         return separator
     }()
     
+    
     private lazy var emailField: UITextField = {
         let emailField = UITextField()
         emailField.backgroundColor = .systemGray6
@@ -48,7 +52,7 @@ class LogInViewController: UIViewController {
         emailField.textColor = .black
         emailField.autocapitalizationType = .none
         emailField.font = .systemFont(ofSize: 16)
-//        emailField.tintColor =
+        emailField.resignFirstResponder()
         emailField.translatesAutoresizingMaskIntoConstraints = false
         return emailField
     }()
@@ -74,6 +78,9 @@ class LogInViewController: UIViewController {
         stackView.addArrangedSubview(passwordField)
         addConstr()
         
+        emailField.delegate = self
+        passwordField.delegate = self
+        
             }
     
     func addConstr(){
@@ -91,6 +98,12 @@ class LogInViewController: UIViewController {
         
         
         NSLayoutConstraint.activate([imageHeight, imageWidth, imageCenter, imageTop, stackHeight, stackTop, stackLeading, stackTrailing, separatorWidth, separatorHeight, emailLeading])
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        return true
     }
     
     
