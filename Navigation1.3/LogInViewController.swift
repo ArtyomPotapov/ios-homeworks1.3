@@ -10,12 +10,16 @@ import UIKit
 
 class LogInViewController: UIViewController, UITextFieldDelegate {
     
-    
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.backgroundColor = .red
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
+    }()
+    
+    private lazy var contentView: UIView = {
+        let contentView = UIView()
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        return contentView
     }()
     
     private lazy var imageView: UIImageView = {
@@ -25,7 +29,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
     
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
@@ -40,13 +43,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         return stackView
-    }()
-    
-    private lazy var contentView: UIView = {
-        let contentView = UIView()
-        contentView.backgroundColor = .green
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        return contentView
     }()
     
     
@@ -80,59 +76,53 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         return passwordField
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isToolbarHidden = true
-        view.addSubview(contentView)
-//        scrollView.addSubview(contentView)
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
         contentView.addSubview(imageView)
         contentView.addSubview(stackView)
         stackView.addArrangedSubview(emailField)
         stackView.addArrangedSubview(separator)
         stackView.addArrangedSubview(passwordField)
         addConstr()
-        
         emailField.delegate = self
         passwordField.delegate = self
-        
             }
     
     func addConstr(){
-//        let scrollTop = scrollView.topAnchor.constraint(equalTo: view.topAnchor)
-//        let scrollBottom = scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-//        let scrollLeft = scrollView.leftAnchor.constraint(equalTo: view.leftAnchor)
-//        let scrollRight = scrollView.rightAnchor.constraint(equalTo: view.rightAnchor)
+        let scrollTop = scrollView.topAnchor.constraint(equalTo: view.topAnchor)
+        let scrollBottom = scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        let scrollLeft = scrollView.leftAnchor.constraint(equalTo: view.leftAnchor)
+        let scrollRight = scrollView.rightAnchor.constraint(equalTo: view.rightAnchor)
         
-        
-        let contentTop = contentView.topAnchor.constraint(equalTo: view.topAnchor)
-        let contentBottom = contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        let contentLeft = contentView.leftAnchor.constraint(equalTo: view.leftAnchor)
-        let contentRight = contentView.rightAnchor.constraint(equalTo: view.rightAnchor)
+        let contentTop = contentView.topAnchor.constraint(equalTo: scrollView.topAnchor)
+        contentTop.identifier = "AaaaAAAAA"
+        let contentBottom = contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
+        let contentXCenter = contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor)
+        let contentYCenter = contentView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor)
+        let contentLeft = contentView.leftAnchor.constraint(equalTo: scrollView.leftAnchor)
+        let contentRight = contentView.rightAnchor.constraint(equalTo: scrollView.rightAnchor)
         
         let imageHeight = imageView.heightAnchor.constraint(equalToConstant: 100)
         let imageWidth = imageView.widthAnchor.constraint(equalToConstant: 100)
         let imageCenter = imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         let imageTop = imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 120)
-        
+    
         let stackHeight = stackView.heightAnchor.constraint(equalToConstant: 100)
         let stackTop = stackView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 120)
-        
         let stackLeading = stackView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16)
         let stackTrailing = stackView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16)
         
-        
         let separatorHeight = separator.heightAnchor.constraint(equalToConstant: 0.5)
-//        let separatorWidth = separator.widthAnchor.constraint(equalToConstant: stackView.frame.width)
         let separatorTra = separator.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: 0)
         let separatorLeading = separator.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 0)
 
         let emailLeading = emailField.leftAnchor.constraint(equalTo: stackView.leftAnchor, constant: 10)
         let emailTrailing = emailField.rightAnchor.constraint(equalTo: stackView.rightAnchor, constant: -10)
 
-        
-        
-        NSLayoutConstraint.activate([imageHeight, imageWidth, imageCenter, imageTop, stackHeight, stackTop, stackLeading, stackTrailing, separatorHeight, emailLeading, /*scrollTop, scrollLeft, scrollRight, scrollBottom, */emailTrailing, separatorTra, separatorLeading, contentTop, contentLeft, contentRight, contentBottom])
+        NSLayoutConstraint.activate([scrollTop, scrollLeft, scrollRight, scrollBottom, contentTop,  contentBottom,  contentXCenter, contentYCenter, contentLeft, contentRight, imageHeight, imageWidth, imageCenter, imageTop, stackHeight, stackTop, stackLeading, stackTrailing, separatorHeight, emailLeading,  emailTrailing, separatorTra, separatorLeading])
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -140,6 +130,5 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         passwordField.resignFirstResponder()
         return true
     }
-    
     
 }
