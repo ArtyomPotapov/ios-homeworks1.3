@@ -36,6 +36,7 @@ class ProfileViewController: UIViewController {
         view.addSubview(profileHeaderView)
         view.addSubview(newButton)
         activateConstraints()
+        
     }
     
     func activateConstraints(){

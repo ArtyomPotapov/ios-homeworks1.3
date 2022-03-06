@@ -7,8 +7,9 @@
 
 import UIKit
 
-class ProfileHeaderView: UIView {
+class ProfileHeaderView: UIView, UITextFieldDelegate {
 
+    
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var showStatusButton: UIButton!
     @IBOutlet weak var fullNameLabel: UILabel!
@@ -26,6 +27,7 @@ class ProfileHeaderView: UIView {
         setMyPhoto()
         setshowStatusButton()
         setnewTextField()
+        setStatusTextField.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -84,4 +86,10 @@ class ProfileHeaderView: UIView {
             self.showStatusButton.setTitle(self.buttonTitle, for: .highlighted)
             
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        setStatusTextField.resignFirstResponder()
+        return true
+    }
+    
 }

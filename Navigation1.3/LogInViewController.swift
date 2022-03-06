@@ -76,6 +76,23 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         return passwordField
     }()
     
+    private lazy var button: UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(UIImage(named: "blue_pixel"), for: .normal)
+        button.setTitle("Log In", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 10
+        button.clipsToBounds = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(showProfileVC), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func showProfileVC(){
+        let profileVC = ProfileViewController()
+        navigationController?.pushViewController(profileVC, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isToolbarHidden = true
@@ -83,6 +100,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         scrollView.addSubview(contentView)
         contentView.addSubview(imageView)
         contentView.addSubview(stackView)
+        contentView.addSubview(button)
         stackView.addArrangedSubview(emailField)
         stackView.addArrangedSubview(separator)
         stackView.addArrangedSubview(passwordField)
@@ -122,7 +140,12 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         let emailLeading = emailField.leftAnchor.constraint(equalTo: stackView.leftAnchor, constant: 10)
         let emailTrailing = emailField.rightAnchor.constraint(equalTo: stackView.rightAnchor, constant: -10)
 
-        NSLayoutConstraint.activate([scrollTop, scrollLeft, scrollRight, scrollBottom, contentTop,  contentBottom,  contentXCenter, contentYCenter, contentLeft, contentRight, imageHeight, imageWidth, imageCenter, imageTop, stackHeight, stackTop, stackLeading, stackTrailing, separatorHeight, emailLeading,  emailTrailing, separatorTra, separatorLeading])
+        let buttonTop = button.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 16)
+        let buttonLeading = button.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16)
+        let buttonTrailing = button.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16)
+        let buttonHeight = button.heightAnchor.constraint(equalToConstant: 50)
+        
+        NSLayoutConstraint.activate([scrollTop, scrollLeft, scrollRight, scrollBottom, contentTop,  contentBottom,  contentXCenter, contentYCenter, contentLeft, contentRight, imageHeight, imageWidth, imageCenter, imageTop, stackHeight, stackTop, stackLeading, stackTrailing, separatorHeight, emailLeading,  emailTrailing, separatorTra, separatorLeading, buttonTop, buttonLeading, buttonTrailing, buttonHeight])
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
