@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		50232A1A27D55038006A657E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50232A1927D55038006A657E /* Post.swift */; };
+		50232A1C27D56382006A657E /* ProfileTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50232A1B27D56382006A657E /* ProfileTableHeaderView.swift */; };
 		5086D29927CC553900EBB547 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5086D29827CC553900EBB547 /* LogInViewController.swift */; };
 		50A2FF9727BAE50D006A437C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A2FF9627BAE50D006A437C /* AppDelegate.swift */; };
 		50A2FF9927BAE50D006A437C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A2FF9827BAE50D006A437C /* SceneDelegate.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		50232A1927D55038006A657E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		50232A1B27D56382006A657E /* ProfileTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableHeaderView.swift; sourceTree = "<group>"; };
 		5086D29827CC553900EBB547 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		50A2FF9327BAE50D006A437C /* Navigation1.3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation1.3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A2FF9627BAE50D006A437C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				50A2FFAC27BB0F10006A437C /* ProfileViewController.swift */,
+				50232A1B27D56382006A657E /* ProfileTableHeaderView.swift */,
 				50232A1927D55038006A657E /* Post.swift */,
 				50A2FFB727C03942006A437C /* View.xib */,
 				50A2FFB527C02BA2006A437C /* ProfileHeaderView.swift */,
@@ -176,6 +179,7 @@
 				50A2FFAD27BB0F10006A437C /* ProfileViewController.swift in Sources */,
 				50A2FFAB27BB0E9B006A437C /* FeedViewController.swift in Sources */,
 				50A2FF9927BAE50D006A437C /* SceneDelegate.swift in Sources */,
+				50232A1C27D56382006A657E /* ProfileTableHeaderView.swift in Sources */,
 				50A2FFB327C018A0006A437C /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
