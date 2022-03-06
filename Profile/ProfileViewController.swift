@@ -11,6 +11,15 @@ protocol ViewExpandable: AnyObject {
     func expandedView(isExpand: Bool)
 }
 
+struct PostModel {
+    let author: String
+    let description: String
+    let image: String
+    let likes: Int
+    let views: Int
+}
+
+
 class ProfileViewController: UIViewController {
     
     private lazy var newButton: UIButton = {
@@ -22,6 +31,7 @@ class ProfileViewController: UIViewController {
     }()
     
     var heightViewConstraint: NSLayoutConstraint?
+    
     private lazy var profileHeaderView: ProfileHeaderView = {
         let view = ProfileHeaderView()
         view.translatesAutoresizingMaskIntoConstraints = false
