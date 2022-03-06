@@ -22,6 +22,8 @@ struct PostModel {
 
 class ProfileViewController: UIViewController {
     
+    var 
+    
     private lazy var newButton: UIButton = {
         var button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
