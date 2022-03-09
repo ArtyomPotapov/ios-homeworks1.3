@@ -20,6 +20,7 @@ class ProfileHeaderView: UIView, UITextFieldDelegate {
     private var isButtonAbove = true
     private var buttonTitle = "Set status"
     var delegate: ViewExpandable?
+    var delegate2: ViewExpandable?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -81,6 +82,7 @@ class ProfileHeaderView: UIView, UITextFieldDelegate {
         buttonTopConstraint.constant = isButtonAbove ? 100 : 16
         buttonTitle = isButtonAbove ? "Show status" : "Set status"
             self.delegate?.expandedView(isExpand: self.isButtonAbove)
+            self.delegate2?.expandedView(isExpand: self.isButtonAbove)
             self.isButtonAbove.toggle()
             self.showStatusButton.setTitle(self.buttonTitle, for: .normal)
             self.showStatusButton.setTitle(self.buttonTitle, for: .highlighted)

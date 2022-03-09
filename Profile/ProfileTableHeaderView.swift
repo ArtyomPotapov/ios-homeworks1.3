@@ -9,13 +9,13 @@ import UIKit
 
 class ProfileTableHeaderView: UIView {
     
-    
+    var delegate: ProfileViewController?
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
         self.addSubview(profileHeaderView)
         activateConstraints()
-//        profileHeaderView.delegate = self
+        profileHeaderView.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -31,25 +31,27 @@ class ProfileTableHeaderView: UIView {
         return view
     }()
     
-    
-    
     func activateConstraints(){
         let topConstraint = profileHeaderView.topAnchor.constraint(equalTo: self.topAnchor)
         let leadingConstraint = profileHeaderView.leadingAnchor.constraint(equalTo: self.leadingAnchor)
         let trailConstraint = profileHeaderView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
-        heightViewConstraint =  profileHeaderView.bottomAnchor.constraint(equalTo: self.bottomAnchor)//heightAnchor.constraint(equalToConstant: 220)
-
+        heightViewConstraint =  profileHeaderView.heightAnchor.constraint(equalToConstant: 220)
+//bottomAnchor.constraint(equalTo: self.bottomAnchor)//
         NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailConstraint, heightViewConstraint].compactMap({$0}))
     }
 }
 
 extension ProfileTableHeaderView: ViewExpandable {
     func expandedView(isExpand: Bool) {
-//        heightViewConstraint?.constant = isExpand ? 500 : 220
-//        UIView.animate(withDuration: 0.2) {
-//            self.layoutIfNeeded()
-//
-//        }
+        heightViewConstraint?.constant = isExpand ? 400 : 220
+        delegate?.heightHeader.toggle()
+        
+        UIView.animate(withDuration: 0.3) {
+            self.layoutIfNeeded()
     }
-
+        self.delegate?.relo()
+    }
+    
+    
+    
 }

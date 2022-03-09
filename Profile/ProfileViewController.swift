@@ -19,21 +19,18 @@ struct PostModel {
     let views: Int
 }
 
-
 class ProfileViewController: UIViewController {
-   
+    var height: CGFloat = 400
+    var heightHeader = true
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44
         tableView.dataSource = self
-//        tableView.tableHeaderView = ProfileTableHeaderView()
         tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "DefaultCell")
         tableView.register(PostTableViewCell.self, forCellReuseIdentifier: "PostCell")
-        
-//        tableView.backgroundColor = .black
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -54,6 +51,8 @@ class ProfileViewController: UIViewController {
         NSLayoutConstraint.activate([tableTop, tableLeft, tableBottom, tableTrailing])
     }
     
+    
+    
 }
 extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
    
@@ -64,23 +63,8 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count 
     }
-//    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-//        <#code#>
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if indexPath.row == 0 {
-//
-//             let cell = UITableViewCell()
-//            let view = ProfileTableHeaderView()
-//            cell.contentView.addSubview(view)
-//            view.topAnchor.constraint(equalTo: cell.topAnchor).isActive = true
-//            view.bottomAnchor.constraint(equalTo: cell.bottomAnchor).isActive = true
-//            view.leftAnchor.constraint(equalTo: cell.leftAnchor).isActive = true
-//            view.rightAnchor.constraint(equalTo: cell.rightAnchor).isActive = true
-//            view.heightAnchor.constraint(equalToConstant: 220).isActive = true
-//            return cell
-//        }
-//        else {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as? PostTableViewCell  else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DefaultCell", for: indexPath)
             return cell
@@ -88,16 +72,26 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         let post = posts[indexPath.row ]
         cell.setup(post: post)
         return cell
-//        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = ProfileTableHeaderView()
+        header.delegate = self
         return header
     }
     
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 220
+        if heightHeader == true {
+            return 220
+        } else {
+        return 400
+    }
+    }
+    
+    func relo(){
+        tableView.reloadData()
+        
     }
     
 }
