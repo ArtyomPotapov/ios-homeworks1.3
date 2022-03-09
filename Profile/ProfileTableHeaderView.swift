@@ -22,8 +22,6 @@ class ProfileTableHeaderView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    
     var heightViewConstraint: NSLayoutConstraint?
     
     private lazy var profileHeaderView: ProfileHeaderView = {
@@ -39,7 +37,7 @@ class ProfileTableHeaderView: UIView {
         let topConstraint = profileHeaderView.topAnchor.constraint(equalTo: self.topAnchor)
         let leadingConstraint = profileHeaderView.leadingAnchor.constraint(equalTo: self.leadingAnchor)
         let trailConstraint = profileHeaderView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
-        heightViewConstraint =  profileHeaderView.heightAnchor.constraint(equalToConstant: 220)
+        heightViewConstraint =  profileHeaderView.bottomAnchor.constraint(equalTo: self.bottomAnchor)//heightAnchor.constraint(equalToConstant: 220)
 
         NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailConstraint, heightViewConstraint].compactMap({$0}))
     }
@@ -47,11 +45,11 @@ class ProfileTableHeaderView: UIView {
 
 extension ProfileTableHeaderView: ViewExpandable {
     func expandedView(isExpand: Bool) {
-        heightViewConstraint?.constant = isExpand ? 500 : 220
-        UIView.animate(withDuration: 0.2) {
-            self.layoutIfNeeded()
-           
-        }
+//        heightViewConstraint?.constant = isExpand ? 500 : 220
+//        UIView.animate(withDuration: 0.2) {
+//            self.layoutIfNeeded()
+//
+//        }
     }
 
 }
