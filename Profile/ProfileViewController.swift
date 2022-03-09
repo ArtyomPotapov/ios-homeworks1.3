@@ -47,12 +47,8 @@ class ProfileViewController: UIViewController {
         let tableBottom = tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         let tableLeft = tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
         let tableTrailing = tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        
         NSLayoutConstraint.activate([tableTop, tableLeft, tableBottom, tableTrailing])
     }
-    
-    
-    
 }
 extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
    
@@ -80,18 +76,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         return header
     }
     
-    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if heightHeader == true {
-            return 220
-        } else {
-        return 400
+        return 280
     }
-    }
-    
-    func relo(){
-        tableView.reloadData()
-        
-    }
-    
 }

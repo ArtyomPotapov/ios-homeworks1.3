@@ -36,22 +36,16 @@ class ProfileTableHeaderView: UIView {
         let leadingConstraint = profileHeaderView.leadingAnchor.constraint(equalTo: self.leadingAnchor)
         let trailConstraint = profileHeaderView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         heightViewConstraint =  profileHeaderView.heightAnchor.constraint(equalToConstant: 220)
-//bottomAnchor.constraint(equalTo: self.bottomAnchor)//
         NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailConstraint, heightViewConstraint].compactMap({$0}))
     }
 }
 
 extension ProfileTableHeaderView: ViewExpandable {
     func expandedView(isExpand: Bool) {
-        heightViewConstraint?.constant = isExpand ? 400 : 220
+        heightViewConstraint?.constant = isExpand ? 280 : 220
         delegate?.heightHeader.toggle()
-        
         UIView.animate(withDuration: 0.3) {
             self.layoutIfNeeded()
+        }
     }
-        self.delegate?.relo()
-    }
-    
-    
-    
 }

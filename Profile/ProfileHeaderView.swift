@@ -79,7 +79,7 @@ class ProfileHeaderView: UIView, UITextFieldDelegate {
             statusTextField.text = setStatusTextField.text ?? ""
         }
         
-        buttonTopConstraint.constant = isButtonAbove ? 100 : 16
+        buttonTopConstraint.constant = isButtonAbove ? 70 : 16
         buttonTitle = isButtonAbove ? "Show status" : "Set status"
             self.delegate?.expandedView(isExpand: self.isButtonAbove)
             self.delegate2?.expandedView(isExpand: self.isButtonAbove)

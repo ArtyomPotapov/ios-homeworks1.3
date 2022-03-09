@@ -29,7 +29,6 @@ class PostTableViewCell: UITableViewCell {
         let authorLabel = UILabel()
         authorLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 20)
         authorLabel.numberOfLines = 2
-//        authorLabel.font =
         authorLabel.translatesAutoresizingMaskIntoConstraints = false
         return authorLabel
     }()
@@ -61,17 +60,13 @@ class PostTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -114,5 +109,4 @@ class PostTableViewCell: UITableViewCell {
         self.myImageView.image = UIImage(named: "\(post.image)")
         
     }
-    
 }
