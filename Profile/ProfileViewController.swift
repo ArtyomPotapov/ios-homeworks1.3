@@ -23,7 +23,6 @@ struct PostModel {
 class ProfileViewController: UIViewController {
    
     
-    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.rowHeight = UITableView.automaticDimension
@@ -32,7 +31,7 @@ class ProfileViewController: UIViewController {
         tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "DefaultCell")
         tableView.register(PostTableViewCell.self, forCellReuseIdentifier: "PostCell")
-        tableView.backgroundColor = .black
+//        tableView.backgroundColor = .black
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -46,7 +45,7 @@ class ProfileViewController: UIViewController {
    
     func addConstraint(){
         let tableTop = tableView.topAnchor.constraint(equalTo: view.topAnchor)
-        let tableBottom = tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        let tableBottom = tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         let tableLeft = tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
         let tableTrailing = tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         
@@ -64,11 +63,14 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DefaultCell", for: indexPath)
             return cell
         }
+        let post = posts[indexPath.row]
+        cell.setup(post: post)
         return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = ProfileTableHeaderView()
+        
         return header
         
     }

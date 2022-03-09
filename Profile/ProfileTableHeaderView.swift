@@ -9,12 +9,13 @@ import UIKit
 
 class ProfileTableHeaderView: UIView {
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
         self.addSubview(profileHeaderView)
         activateConstraints()
-        
+//        profileHeaderView.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -35,7 +36,7 @@ class ProfileTableHeaderView: UIView {
     
     
     func activateConstraints(){
-        let topConstraint = profileHeaderView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor)
+        let topConstraint = profileHeaderView.topAnchor.constraint(equalTo: self.topAnchor)
         let leadingConstraint = profileHeaderView.leadingAnchor.constraint(equalTo: self.leadingAnchor)
         let trailConstraint = profileHeaderView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         heightViewConstraint =  profileHeaderView.heightAnchor.constraint(equalToConstant: 220)
@@ -49,6 +50,7 @@ extension ProfileTableHeaderView: ViewExpandable {
         heightViewConstraint?.constant = isExpand ? 500 : 220
         UIView.animate(withDuration: 0.2) {
             self.layoutIfNeeded()
+           
         }
     }
 

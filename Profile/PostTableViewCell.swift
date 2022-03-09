@@ -27,7 +27,9 @@ class PostTableViewCell: UITableViewCell {
     
     private lazy var authorLabel: UILabel = {
         let authorLabel = UILabel()
-        authorLabel.font = UIFont(name: "Georgia", size: 18)
+        authorLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 20)
+        authorLabel.numberOfLines = 2
+//        authorLabel.font =
         authorLabel.translatesAutoresizingMaskIntoConstraints = false
         return authorLabel
     }()
@@ -35,6 +37,7 @@ class PostTableViewCell: UITableViewCell {
     private lazy var descriptionLabel: UILabel = {
         let descriptionLabel = UILabel()
         descriptionLabel.textColor = .systemGray3
+        descriptionLabel.numberOfLines = 0
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         return descriptionLabel
     }()
@@ -53,6 +56,7 @@ class PostTableViewCell: UITableViewCell {
     
     private lazy var myImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.backgroundColor = .black
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -88,7 +92,22 @@ class PostTableViewCell: UITableViewCell {
     }
     
     func addMyConstraints(){
-        
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        let stackTop = stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16)
+        let stackLead = stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
+        let stackBottom = stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        let stackTrail = stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+        let imageWidth = myImageView.widthAnchor.constraint(equalToConstant: window.frame.width)
+        let imageHeight = myImageView.heightAnchor.constraint(equalToConstant: window.frame.width)
+        NSLayoutConstraint.activate([stackTop, stackLead, stackTrail, stackBottom, imageWidth, imageHeight])
+    }
+    
+    func setup(post: PostModel){
+        self.authorLabel.text = post.author
+        self.viewsLabel.text = "Views: " + String(post.views)
+        self.likesLabel.text = "Likes: " + String(post.likes)
+        self.descriptionLabel.text = post.description
+        self.myImageView.image = UIImage(named: "\(post.image)")
         
     }
     
