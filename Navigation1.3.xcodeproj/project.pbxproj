@@ -24,6 +24,27 @@
 		50A2FFB827C03942006A437C /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50A2FFB727C03942006A437C /* View.xib */; };
 		50CC0E3427E3D2C300DA13CE /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC0E3327E3D2C300DA13CE /* PhotoTableViewCell.swift */; };
 		50CC0E3627E3D45700DA13CE /* ArrayOfPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC0E3527E3D45600DA13CE /* ArrayOfPhotos.swift */; };
+		50CC0E7327E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_68.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E5F27E4008B00DA13CE /* prikolnye_fotografii_kotov_141_foto_68.jpg */; };
+		50CC0E7427E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6027E4008B00DA13CE /* prikolnye_fotografii_kotov_141_foto_10.jpg */; };
+		50CC0E7527E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_59.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6127E4008B00DA13CE /* prikolnye_fotografii_kotov_141_foto_59.jpg */; };
+		50CC0E7627E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_33.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6227E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_33.jpg */; };
+		50CC0E7727E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6327E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_7.jpg */; };
+		50CC0E7827E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_44.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6427E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_44.jpg */; };
+		50CC0E7927E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_24.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6527E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_24.jpg */; };
+		50CC0E7A27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_35.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6627E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_35.jpg */; };
+		50CC0E7B27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_41.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6727E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_41.jpg */; };
+		50CC0E7C27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_26.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6827E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_26.jpg */; };
+		50CC0E7D27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_47.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6927E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_47.jpg */; };
+		50CC0E7E27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_25.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6A27E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_25.jpg */; };
+		50CC0E7F27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_55.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6B27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_55.jpg */; };
+		50CC0E8027E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_63.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6C27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_63.jpg */; };
+		50CC0E8127E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_29.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6D27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_29.jpg */; };
+		50CC0E8227E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_42.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6E27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_42.jpg */; };
+		50CC0E8327E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6F27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_13.jpg */; };
+		50CC0E8427E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_39.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E7027E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_39.jpg */; };
+		50CC0E8527E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_16.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E7127E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_16.jpg */; };
+		50CC0E8627E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E7227E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_15.jpg */; };
+		50CC0E8927E4071600DA13CE /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC0E8827E4071600DA13CE /* PhotosViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +67,27 @@
 		50A2FFB727C03942006A437C /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		50CC0E3327E3D2C300DA13CE /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		50CC0E3527E3D45600DA13CE /* ArrayOfPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayOfPhotos.swift; sourceTree = "<group>"; };
+		50CC0E5F27E4008B00DA13CE /* prikolnye_fotografii_kotov_141_foto_68.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prikolnye_fotografii_kotov_141_foto_68.jpg; sourceTree = "<group>"; };
+		50CC0E6027E4008B00DA13CE /* prikolnye_fotografii_kotov_141_foto_10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prikolnye_fotografii_kotov_141_foto_10.jpg; sourceTree = "<group>"; };
+		50CC0E6127E4008B00DA13CE /* prikolnye_fotografii_kotov_141_foto_59.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prikolnye_fotografii_kotov_141_foto_59.jpg; sourceTree = "<group>"; };
+		50CC0E6227E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_33.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prikolnye_fotografii_kotov_141_foto_33.jpg; sourceTree = "<group>"; };
+		50CC0E6327E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prikolnye_fotografii_kotov_141_foto_7.jpg; sourceTree = "<group>"; };
+		50CC0E6427E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_44.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prikolnye_fotografii_kotov_141_foto_44.jpg; sourceTree = "<group>"; };
+		50CC0E6527E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_24.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prikolnye_fotografii_kotov_141_foto_24.jpg; sourceTree = "<group>"; };
+		50CC0E6627E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_35.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prikolnye_fotografii_kotov_141_foto_35.jpg; sourceTree = "<group>"; };
+		50CC0E6727E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_41.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prikolnye_fotografii_kotov_141_foto_41.jpg; sourceTree = "<group>"; };
+		50CC0E6827E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_26.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prikolnye_fotografii_kotov_141_foto_26.jpg; sourceTree = "<group>"; };
+		50CC0E6927E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_47.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prikolnye_fotografii_kotov_141_foto_47.jpg; sourceTree = "<group>"; };
+		50CC0E6A27E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_25.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prikolnye_fotografii_kotov_141_foto_25.jpg; sourceTree = "<group>"; };
+		50CC0E6B27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_55.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prikolnye_fotografii_kotov_141_foto_55.jpg; sourceTree = "<group>"; };
+		50CC0E6C27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_63.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prikolnye_fotografii_kotov_141_foto_63.jpg; sourceTree = "<group>"; };
+		50CC0E6D27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_29.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prikolnye_fotografii_kotov_141_foto_29.jpg; sourceTree = "<group>"; };
+		50CC0E6E27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_42.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prikolnye_fotografii_kotov_141_foto_42.jpg; sourceTree = "<group>"; };
+		50CC0E6F27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prikolnye_fotografii_kotov_141_foto_13.jpg; sourceTree = "<group>"; };
+		50CC0E7027E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_39.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prikolnye_fotografii_kotov_141_foto_39.jpg; sourceTree = "<group>"; };
+		50CC0E7127E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_16.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prikolnye_fotografii_kotov_141_foto_16.jpg; sourceTree = "<group>"; };
+		50CC0E7227E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prikolnye_fotografii_kotov_141_foto_15.jpg; sourceTree = "<group>"; };
+		50CC0E8827E4071600DA13CE /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +141,42 @@
 				50A2FFAC27BB0F10006A437C /* ProfileViewController.swift */,
 				50232A1D27D5718D006A657E /* PostTableViewCell.swift */,
 				50CC0E3327E3D2C300DA13CE /* PhotoTableViewCell.swift */,
+				50CC0E8827E4071600DA13CE /* PhotosViewController.swift */,
 				50232A1B27D56382006A657E /* ProfileTableHeaderView.swift */,
 				50232A1927D55038006A657E /* Post.swift */,
 				50A2FFB727C03942006A437C /* View.xib */,
 				50CC0E3527E3D45600DA13CE /* ArrayOfPhotos.swift */,
 				50A2FFB527C02BA2006A437C /* ProfileHeaderView.swift */,
+				50CC0E8727E400A300DA13CE /* Photos */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		50CC0E8727E400A300DA13CE /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				50CC0E6327E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_7.jpg */,
+				50CC0E6027E4008B00DA13CE /* prikolnye_fotografii_kotov_141_foto_10.jpg */,
+				50CC0E6F27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_13.jpg */,
+				50CC0E7227E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_15.jpg */,
+				50CC0E7127E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_16.jpg */,
+				50CC0E6527E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_24.jpg */,
+				50CC0E6A27E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_25.jpg */,
+				50CC0E6827E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_26.jpg */,
+				50CC0E6D27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_29.jpg */,
+				50CC0E6227E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_33.jpg */,
+				50CC0E6627E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_35.jpg */,
+				50CC0E7027E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_39.jpg */,
+				50CC0E6727E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_41.jpg */,
+				50CC0E6E27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_42.jpg */,
+				50CC0E6427E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_44.jpg */,
+				50CC0E6927E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_47.jpg */,
+				50CC0E6B27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_55.jpg */,
+				50CC0E6127E4008B00DA13CE /* prikolnye_fotografii_kotov_141_foto_59.jpg */,
+				50CC0E6C27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_63.jpg */,
+				50CC0E5F27E4008B00DA13CE /* prikolnye_fotografii_kotov_141_foto_68.jpg */,
+			);
+			path = Photos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,8 +237,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50CC0E8327E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_13.jpg in Resources */,
+				50CC0E7E27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_25.jpg in Resources */,
+				50CC0E7927E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_24.jpg in Resources */,
+				50CC0E7427E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_10.jpg in Resources */,
 				50A2FFA327BAE513006A437C /* LaunchScreen.storyboard in Resources */,
+				50CC0E8627E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_15.jpg in Resources */,
+				50CC0E7D27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_47.jpg in Resources */,
+				50CC0E8427E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_39.jpg in Resources */,
+				50CC0E8127E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_29.jpg in Resources */,
+				50CC0E7727E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_7.jpg in Resources */,
+				50CC0E7F27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_55.jpg in Resources */,
+				50CC0E7827E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_44.jpg in Resources */,
+				50CC0E7527E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_59.jpg in Resources */,
+				50CC0E8027E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_63.jpg in Resources */,
+				50CC0E7A27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_35.jpg in Resources */,
+				50CC0E7C27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_26.jpg in Resources */,
 				50A2FFB827C03942006A437C /* View.xib in Resources */,
+				50CC0E8227E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_42.jpg in Resources */,
+				50CC0E7327E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_68.jpg in Resources */,
+				50CC0E7B27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_41.jpg in Resources */,
+				50CC0E8527E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_16.jpg in Resources */,
+				50CC0E7627E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_33.jpg in Resources */,
 				50A2FFA027BAE513006A437C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,6 +279,7 @@
 				50232A1A27D55038006A657E /* Post.swift in Sources */,
 				50A2FFAD27BB0F10006A437C /* ProfileViewController.swift in Sources */,
 				50A2FFAB27BB0E9B006A437C /* FeedViewController.swift in Sources */,
+				50CC0E8927E4071600DA13CE /* PhotosViewController.swift in Sources */,
 				50A2FF9927BAE50D006A437C /* SceneDelegate.swift in Sources */,
 				50232A1C27D56382006A657E /* ProfileTableHeaderView.swift in Sources */,
 				50CC0E3427E3D2C300DA13CE /* PhotoTableViewCell.swift in Sources */,

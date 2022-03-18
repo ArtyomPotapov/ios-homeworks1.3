@@ -9,6 +9,8 @@ import UIKit
 
 class PhotoTableViewCell: UITableViewCell {
 
+    var photos = [String]()
+    
     private lazy var verticalStackView: UIStackView = {
        let stackView = UIStackView()
         stackView.axis = .vertical
@@ -27,6 +29,7 @@ class PhotoTableViewCell: UITableViewCell {
        let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.spacing = 8
+        stackView.distribution = .fillEqually
         stackView.translatesAutoresizingMaskIntoConstraints = false
        return stackView
     }()
@@ -41,26 +44,20 @@ class PhotoTableViewCell: UITableViewCell {
         return photosLabel
     }()
     
-//    private lazy var arrowLabel: UILabel = {
-//        let photosLabel = UILabel()
-//        photosLabel.imageView = UIImage(systemName: "pencil.circle")!
-//        photosLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 24)
-//        photosLabel.translatesAutoresizingMaskIntoConstraints = false
-//        return photosLabel
-//    }()
-//
+
     private lazy var arrowImageView1: UIImageView = {
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: photosLabel.layer.frame.height))
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: photosLabel.layer.frame.height))
         imageView.image = UIImage(systemName: "arrowshape.turn.up.right")
+        imageView.setContentHuggingPriority(UILayoutPriority(400), for: .horizontal)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     
     private lazy var myImageView1: UIImageView = {
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: (self.contentView.frame.width / 4 - 48), height: 60))
+        let imageView = UIImageView()
         imageView.image = UIImage(named: photos[0])
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill
         imageView.layer.cornerRadius = 6
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -68,9 +65,9 @@ class PhotoTableViewCell: UITableViewCell {
     }()
     
     private lazy var myImageView2: UIImageView = {
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: (self.contentView.frame.width / 4 - 48), height: 60))
+        let imageView = UIImageView()
         imageView.image = UIImage(named: photos[1])
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill
         imageView.layer.cornerRadius = 6
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -78,9 +75,9 @@ class PhotoTableViewCell: UITableViewCell {
     }()
     
     private lazy var myImageView3: UIImageView = {
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: (self.contentView.frame.width / 4 - 48), height: 60))
+        let imageView = UIImageView()
         imageView.image = UIImage(named: photos[2])
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill
         imageView.layer.cornerRadius = 6
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -89,9 +86,9 @@ class PhotoTableViewCell: UITableViewCell {
     
     
     private lazy var myImageView4: UIImageView = {
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: (self.contentView.frame.width / 4 - 48), height: 60))
+        let imageView = UIImageView()
         imageView.image = UIImage(named: photos[3])
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill
         imageView.layer.cornerRadius = 6
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -106,12 +103,12 @@ class PhotoTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        addPhotos()
         contentView.addSubview(verticalStackView)
         verticalStackView.addArrangedSubview(horizontalTopStackView)
         verticalStackView.addArrangedSubview(horizontalStackView)
@@ -124,13 +121,37 @@ class PhotoTableViewCell: UITableViewCell {
         setConstraints()
     }
     
+    func addPhotos(){
+        let fileManager = FileManager.default
+        let path = Bundle.main.resourcePath!
+        let items = try! fileManager.contentsOfDirectory(atPath: path)
+        for item in items {
+            if item.hasPrefix("prikolnye_fotografii_kotov_141_foto_") {
+                photos.append(item)
+            }
+        }
+    }
+    
     func setConstraints(){
         let topStackView = verticalStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12)
         let bottomStackView = verticalStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12)
         let leadStackView = verticalStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12)
         let trailStackView = verticalStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12)
         
-        NSLayoutConstraint.activate([topStackView, bottomStackView, trailStackView, leadStackView])
+        let myImageView1Width = myImageView1.widthAnchor.constraint(equalToConstant: (self.contentView.frame.width / 4 - 48))
+        let myImageView1Heigth = myImageView1.heightAnchor.constraint(equalToConstant: 60)
+        
+        let myImageView2Width = myImageView2.widthAnchor.constraint(equalToConstant: (self.contentView.frame.width / 4 - 48))
+        let myImageView2Heigth = myImageView2.heightAnchor.constraint(equalToConstant: 60)
+        
+        let myImageView3Width = myImageView3.widthAnchor.constraint(equalToConstant: (self.contentView.frame.width / 4 - 48))
+        let myImageView3Heigth = myImageView3.heightAnchor.constraint(equalToConstant: 60)
+        
+        let myImageView4Width = myImageView4.widthAnchor.constraint(equalToConstant: (self.contentView.frame.width / 4 - 48))
+        let myImageView4Heigth = myImageView4.heightAnchor.constraint(equalToConstant: 60)
+        
+        NSLayoutConstraint.activate([topStackView, bottomStackView, trailStackView, leadStackView, myImageView1Width, myImageView2Width, myImageView3Width, myImageView4Width, myImageView1Heigth, myImageView2Heigth, myImageView3Heigth, myImageView4Heigth
+                                    ])
     }
     
     required init?(coder: NSCoder) {
