@@ -46,8 +46,9 @@ class PhotoTableViewCell: UITableViewCell {
     
 
     private lazy var arrowImageView1: UIImageView = {
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: photosLabel.layer.frame.height))
-        imageView.image = UIImage(systemName: "arrowshape.turn.up.right")
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "arrow.right")
+        imageView.tintColor = .black
         imageView.setContentHuggingPriority(UILayoutPriority(400), for: .horizontal)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -150,7 +151,9 @@ class PhotoTableViewCell: UITableViewCell {
         let myImageView4Width = myImageView4.widthAnchor.constraint(equalToConstant: (self.contentView.frame.width / 4 - 48))
         let myImageView4Heigth = myImageView4.heightAnchor.constraint(equalToConstant: 60)
         
-        NSLayoutConstraint.activate([topStackView, bottomStackView, trailStackView, leadStackView, myImageView1Width, myImageView2Width, myImageView3Width, myImageView4Width, myImageView1Heigth, myImageView2Heigth, myImageView3Heigth, myImageView4Heigth
+        let arrowImageView1width = arrowImageView1.widthAnchor.constraint(equalToConstant: 40)
+        
+        NSLayoutConstraint.activate([topStackView, bottomStackView, trailStackView, leadStackView, myImageView1Width, myImageView2Width, myImageView3Width, myImageView4Width, myImageView1Heigth, myImageView2Heigth, myImageView3Heigth, myImageView4Heigth, arrowImageView1width
                                     ])
     }
     
