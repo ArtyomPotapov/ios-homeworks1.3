@@ -22,7 +22,7 @@ class PhotosViewController: UIViewController {
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
         myCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        myCollectionView.backgroundColor = .yellow
+        myCollectionView.backgroundColor = .white
         myCollectionView.register(MyCollectionViewCell.self, forCellWithReuseIdentifier: "MyPhotoCell")
         return myCollectionView
     }()
@@ -33,7 +33,6 @@ class PhotosViewController: UIViewController {
         title = "Photo Gallery"
         view.addSubview(myCollectionView)
         addConstr()
-        // Do any additional setup after loading the view.
     }
     
     func addConstr(){
@@ -61,7 +60,7 @@ extension PhotosViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 100)
+        let widthAndHeight = floor((collectionView.frame.width - 16) / 3)
+        return CGSize(width: widthAndHeight, height: widthAndHeight)
     }
-    
 }
