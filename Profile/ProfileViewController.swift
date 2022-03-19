@@ -74,13 +74,11 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             let post = posts[indexPath.row ]
             cell.setup(post: post)
             return cell
-            
         }
         
         else {
             let cell = PhotoTableViewCell(style: .default, reuseIdentifier: "PhotoCell")
             return cell
-            
         }
     }
     
@@ -115,7 +113,6 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             let vc = PhotosViewController()
             navigationController?.pushViewController(vc, animated: true)
             tableView.deselectRow(at: indexPath, animated: false)
-            
         }
     }
 }
