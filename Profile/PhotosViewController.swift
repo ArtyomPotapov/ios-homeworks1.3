@@ -9,8 +9,6 @@ import UIKit
 
 class PhotosViewController: UIViewController {
     
-    
-
     private lazy var layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
