@@ -13,9 +13,7 @@ class MyCollectionViewCell: UICollectionViewCell {
        let myImageView = UIImageView()
         myImageView.translatesAutoresizingMaskIntoConstraints = false
         myImageView.contentMode = .scaleToFill
-//        myImageView.image = UIImage(named: )
         return myImageView
-        
     }()
     
     override init(frame: CGRect) {

@@ -9,7 +9,7 @@ import UIKit
 
 class PhotoTableViewCell: UITableViewCell {
 
-    var photos = [String]()
+//    var photos = [String]()
     
     private lazy var verticalStackView: UIStackView = {
        let stackView = UIStackView()

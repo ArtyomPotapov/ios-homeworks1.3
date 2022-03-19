@@ -18,9 +18,12 @@ class PhotosViewController: UIViewController {
     }()
     
     private lazy var myCollectionView: UICollectionView = {
-        let myCollectionView = UICollectionView(frame: .zero, collectionViewLayout: self.layout)
+        let myCollectionView = UICollectionView(frame: .null, collectionViewLayout: layout)
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
+        myCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        myCollectionView.backgroundColor = .yellow
+        myCollectionView.register(MyCollectionViewCell.self, forCellWithReuseIdentifier: "MyPhotoCell")
         return myCollectionView
     }()
     
@@ -28,30 +31,37 @@ class PhotosViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemPink
         title = "Photo Gallery"
+        view.addSubview(myCollectionView)
+        addConstr()
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func addConstr(){
+        let topColl = myCollectionView.topAnchor.constraint(equalTo: view.topAnchor)
+        let bottomColl = myCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        let leadingColl = myCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+        let trailColl = myCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        
+        NSLayoutConstraint.activate([topColl, bottomColl, trailColl, leadingColl])
     }
-    */
-
 }
 
 
-extension PhotosViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+
+extension PhotosViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 20
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyPhotoCell", for: indexPath) as! MyCollectionViewCell
+        cell.setImage(name: photos[indexPath.item])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 100)
     }
     
 }

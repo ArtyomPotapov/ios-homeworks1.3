@@ -7,7 +7,7 @@
 
 import Foundation
 
-//var photos = [String]()
+var photos = [String]()
 //let fileManager = FileManager.default
 //let path = Bundle.main.resourcePath!
 //let items = try! fileManager.contentsOfDirectory(atPath: path)
