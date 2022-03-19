@@ -151,7 +151,7 @@ class PhotoTableViewCell: UITableViewCell {
         let myImageView4Width = myImageView4.widthAnchor.constraint(equalToConstant: (self.contentView.frame.width / 4 - 48))
         let myImageView4Heigth = myImageView4.heightAnchor.constraint(equalToConstant: 60)
         
-        let arrowImageView1width = arrowImageView1.widthAnchor.constraint(equalToConstant: 40)
+        let arrowImageView1width = arrowImageView1.widthAnchor.constraint(equalToConstant: 30)
         
         NSLayoutConstraint.activate([topStackView, bottomStackView, trailStackView, leadStackView, myImageView1Width, myImageView2Width, myImageView3Width, myImageView4Width, myImageView1Heigth, myImageView2Heigth, myImageView3Heigth, myImageView4Heigth, arrowImageView1width
                                     ])
