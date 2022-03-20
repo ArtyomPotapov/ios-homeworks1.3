@@ -126,12 +126,16 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         let imageHeight = imageView.heightAnchor.constraint(equalToConstant: 100)
         let imageWidth = imageView.widthAnchor.constraint(equalToConstant: 100)
         let imageCenter = imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
-        let imageTop = imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 120)
+        let imageTop = imageView.topAnchor.constraint(greaterThanOrEqualTo: contentView.topAnchor, constant: 10)
+        let imageBottom = imageView.bottomAnchor.constraint(greaterThanOrEqualTo: stackView.topAnchor, constant: -80)
+//        imageTop.priority = .defaultHigh
+        
     
         let stackHeight = stackView.heightAnchor.constraint(equalToConstant: 100)
-        let stackTop = stackView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 120)
+        let stackCenterY = stackView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         let stackLeading = stackView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16)
         let stackTrailing = stackView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16)
+        
         
         let separatorHeight = separator.heightAnchor.constraint(equalToConstant: 0.5)
         let separatorTra = separator.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: 0)
@@ -145,7 +149,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         let buttonTrailing = button.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16)
         let buttonHeight = button.heightAnchor.constraint(equalToConstant: 50)
         
-        NSLayoutConstraint.activate([scrollTop, scrollLeft, scrollRight, scrollBottom, contentTop,  contentBottom,  contentXCenter, contentYCenter, contentLeft, contentRight, imageHeight, imageWidth, imageCenter, imageTop, stackHeight, stackTop, stackLeading, stackTrailing, separatorHeight, emailLeading,  emailTrailing, separatorTra, separatorLeading, buttonTop, buttonLeading, buttonTrailing, buttonHeight])
+        NSLayoutConstraint.activate([scrollTop, scrollLeft, scrollRight, scrollBottom, contentTop, imageTop , contentBottom,  contentXCenter, contentYCenter, contentLeft, contentRight, imageHeight, imageWidth, imageCenter, stackHeight, stackCenterY, stackLeading, stackTrailing, separatorHeight, emailLeading,  emailTrailing, separatorTra, separatorLeading, buttonTop, buttonLeading, buttonTrailing, buttonHeight, imageBottom])
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
