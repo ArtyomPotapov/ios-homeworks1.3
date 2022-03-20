@@ -10,6 +10,8 @@ import UIKit
 
 class LogInViewController: UIViewController, UITextFieldDelegate {
     
+//    let keyboardFrame = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue).cgRectValue
+    
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -107,7 +109,25 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         addConstr()
         emailField.delegate = self
         passwordField.delegate = self
-            }
+        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        
+    }
+    
+    @objc func adjustForKeyboard (notification: Notification){
+        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            
+            let contentOffset: CGPoint = notification.name == UIResponder.keyboardWillHideNotification
+            ? .zero
+            : CGPoint(x: 0, y: keyboardHeight)
+            self.scrollView.contentOffset = contentOffset // .setContentOffset()
+        }
+    }
+    
     
     func addConstr(){
         let scrollTop = scrollView.topAnchor.constraint(equalTo: view.topAnchor)
@@ -128,7 +148,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         let imageCenter = imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         let imageTop = imageView.topAnchor.constraint(greaterThanOrEqualTo: contentView.topAnchor, constant: 10)
         let imageBottom = imageView.bottomAnchor.constraint(greaterThanOrEqualTo: stackView.topAnchor, constant: -80)
-//        imageTop.priority = .defaultHigh
         
     
         let stackHeight = stackView.heightAnchor.constraint(equalToConstant: 100)
