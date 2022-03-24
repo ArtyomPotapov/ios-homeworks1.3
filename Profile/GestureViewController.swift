@@ -21,7 +21,7 @@ class GestureViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemTeal
+        view.backgroundColor = UIColor(named: "myYellow")
         view.addSubview(myImageView)
         activateConstraints()
         setImage()
