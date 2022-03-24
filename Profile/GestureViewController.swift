@@ -8,8 +8,7 @@
 import UIKit
 
 class GestureViewController: UIViewController {
-    
-//    let topPadding = UIScreen.main.focusedView?.safeAreaLayoutGuide.
+
     
     var widthViewConstraint: NSLayoutConstraint?
     var heightViewConstraint: NSLayoutConstraint?
@@ -92,8 +91,9 @@ class GestureViewController: UIViewController {
     
     func setGesture(){
         tapGestureRecognizer.addTarget(self, action: #selector(handleTapGesture(_:)))
+        
         myImageView.addGestureRecognizer(tapGestureRecognizer)
-//        xCircle.addGestureRecognizer(tapGestureRecognizer)
+        
     }
 
     @objc func handleTapGesture(_ tapGR:UITapGestureRecognizer){
@@ -103,16 +103,20 @@ class GestureViewController: UIViewController {
         self.heightViewConstraint?.constant = self.isExpanded ? self.view.frame.width : 120
         
         self.topConstraint?.constant = self.isExpanded ? (self.view.frame.height - self.view.frame.width) / 2  : 70
-        print(self.view.safeAreaLayoutGuide.layoutFrame.height, self.view.frame.height, self.view.frame.width)
         self.leadingConstraint?.constant = self.isExpanded ? 0 : 20
 
+        if isExpanded {
+            xCircle.addGestureRecognizer(tapGestureRecognizer)
+        } else {
+            myImageView.addGestureRecognizer(tapGestureRecognizer)
+        }
+        
         UIView.animate(withDuration: 0.1){
             self.myImageView.layer.cornerRadius = self.isExpanded ? 0 : 60
             self.fonView.alpha = self.isExpanded ? 1 : 0
             self.xCircle.alpha = self.isExpanded ? 1 : 0
             self.view.layoutIfNeeded()
         } completion: { _ in
-            
 
         }
         
