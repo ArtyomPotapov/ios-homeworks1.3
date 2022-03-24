@@ -46,6 +46,7 @@
 		50CC0E8627E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E7227E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_15.jpg */; };
 		50CC0E8927E4071600DA13CE /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC0E8827E4071600DA13CE /* PhotosViewController.swift */; };
 		50CC0E8D27E6429800DA13CE /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC0E8C27E6429800DA13CE /* MyCollectionViewCell.swift */; };
+		50CC0EAF27ECDD4E00DA13CE /* GestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC0EAE27ECDD4E00DA13CE /* GestureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		50CC0E7227E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prikolnye_fotografii_kotov_141_foto_15.jpg; sourceTree = "<group>"; };
 		50CC0E8827E4071600DA13CE /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		50CC0E8C27E6429800DA13CE /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		50CC0EAE27ECDD4E00DA13CE /* GestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				50232A1927D55038006A657E /* Post.swift */,
 				50A2FFB727C03942006A437C /* View.xib */,
 				50CC0E3527E3D45600DA13CE /* ArrayOfPhotos.swift */,
+				50CC0EAE27ECDD4E00DA13CE /* GestureViewController.swift */,
 				50A2FFB527C02BA2006A437C /* ProfileHeaderView.swift */,
 				50CC0E8727E400A300DA13CE /* Photos */,
 			);
@@ -277,6 +280,7 @@
 				50A2FFB627C02BA2006A437C /* ProfileHeaderView.swift in Sources */,
 				50CC0E8D27E6429800DA13CE /* MyCollectionViewCell.swift in Sources */,
 				5086D29927CC553900EBB547 /* LogInViewController.swift in Sources */,
+				50CC0EAF27ECDD4E00DA13CE /* GestureViewController.swift in Sources */,
 				50CC0E3627E3D45700DA13CE /* ArrayOfPhotos.swift in Sources */,
 				50A2FF9727BAE50D006A437C /* AppDelegate.swift in Sources */,
 				50A2FFB127BB21E9006A437C /* InfoViewController.swift in Sources */,

@@ -27,18 +27,18 @@ var titlePost = Post(title: "Переданный текст")
     private lazy var firstButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("First button", for: .normal)
+        button.setTitle("Жесты и анимация", for: .normal)
         button.backgroundColor = .systemRed
         button.titleLabel?.textAlignment = .center
         button.layer.cornerRadius = 12
-        button.addTarget(self, action: #selector(prepareToPost), for: .touchUpInside)
+        button.addTarget(self, action: #selector(prepareToPost2), for: .touchUpInside)
         return button
     }()
     
     private lazy var secondButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Second button", for: .normal)
+        button.setTitle("Жёлтый VC из старой ДЗ", for: .normal)
         button.backgroundColor = .yellow
         button.layer.cornerRadius = 12
         button.setTitleColor(.black, for: .normal)
@@ -72,4 +72,8 @@ var titlePost = Post(title: "Переданный текст")
         navigationController?.pushViewController(postVC, animated: true)
     }
 
+    @objc func prepareToPost2(){
+        let postVC = GestureViewController()
+        navigationController?.pushViewController(postVC, animated: true)
+    }
 }
