@@ -13,17 +13,16 @@ class GestureViewController: UIViewController {
     var heightViewConstraint: NSLayoutConstraint?
     var topConstraint: NSLayoutConstraint?
     var leadingConstraint: NSLayoutConstraint?
-    var isExpanded = false
     
-    let tapGestureRecognizer = UITapGestureRecognizer()
+    var isExpanded = false
+    var tapGestureRecognizer = UITapGestureRecognizer()
     
     
     private lazy var myImageView: UIImageView = {
         var myImageView = UIImageView()
-        
+        myImageView.isUserInteractionEnabled = true
         myImageView.translatesAutoresizingMaskIntoConstraints = false
         return myImageView
-        
     }()
     
     override func viewDidLoad() {
@@ -45,23 +44,32 @@ class GestureViewController: UIViewController {
     }
 
     func setImage(){
-        myImageView.image = UIImage(named: "musya")
-        myImageView.contentMode = .scaleAspectFill
-        myImageView.layer.cornerRadius = 60
-        myImageView.clipsToBounds = true
-        myImageView.layer.borderColor = UIColor.systemRed.cgColor
-        myImageView.layer.borderWidth = 3
+        myImageView.backgroundColor = .systemCyan
+//        myImageView.image = UIImage(named: "musya")
+//        myImageView.contentMode = .scaleAspectFill
+//        myImageView.layer.cornerRadius = 60
+//        myImageView.clipsToBounds = true
+//        myImageView.layer.borderColor = UIColor.systemRed.cgColor
+//        myImageView.layer.borderWidth = 3
     }
-  
     
     func setGesture(){
-        tapGestureRecognizer.addTarget(self, action: #selector(tapView(_:)))
+        tapGestureRecognizer.addTarget(self, action: #selector(handleTapGesture(_:)))
         myImageView.addGestureRecognizer(tapGestureRecognizer)
     }
 
-    @objc func tapView(_ tapGR:UITapGestureRecognizer){
-        guard tapGestureRecognizer === tapGR else {return}
-        
+    @objc func handleTapGesture(_ tapGR:UITapGestureRecognizer){
+        guard tapGestureRecognizer === tapGR else { return }
+        self.isExpanded.toggle()
+        self.widthViewConstraint?.constant = self.isExpanded ? 300 : 120
+        self.heightViewConstraint?.constant = self.isExpanded ? 300 : 120
+
+        UIView.animate(withDuration: 0.1){
+            self.view.layoutIfNeeded()
+        } completion: { _ in
+            
+        }
         
     }
+    
 }
