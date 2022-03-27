@@ -8,6 +8,8 @@
 import UIKit
 
 class PostTableViewCell: UITableViewCell {
+    
+    let tapLikes = UITapGestureRecognizer()
 
     private lazy var bottomStackView: UIStackView = {
        let buttomStackView = UIStackView()
@@ -49,6 +51,8 @@ class PostTableViewCell: UITableViewCell {
     
     private lazy var likesLabel: UILabel = {
         let likesLabel = UILabel()
+        likesLabel.isUserInteractionEnabled = true
+
         likesLabel.translatesAutoresizingMaskIntoConstraints = false
         return likesLabel
     }()
@@ -78,6 +82,9 @@ class PostTableViewCell: UITableViewCell {
         bottomStackView.addArrangedSubview(viewsLabel)
         bottomStackView.addArrangedSubview(likesLabel)
         addMyConstraints()
+        likesLabel.addGestureRecognizer(tapLikes)
+        tapLikes.addTarget(self, action: #selector(addLikes))
+
         
     }
     
@@ -102,10 +109,18 @@ class PostTableViewCell: UITableViewCell {
     
     func setup(post: PostModel){
         self.authorLabel.text = post.author
-        self.viewsLabel.text = "Views: " + String(post.views)
+        let totalLikes = post.views
+        self.viewsLabel.text = "Views: " + String(totalLikes)
         self.likesLabel.text = "Likes: " + String(post.likes)
         self.descriptionLabel.text = post.description
         self.myImageView.image = UIImage(named: "\(post.image)")
         
+    }
+    
+    @objc func addLikes(){
+        guard let newCount = Int((self.likesLabel.text!.dropFirst(7))) else {return}
+        self.likesLabel.text = "Likes: " + String(newCount + 1)
+        layoutIfNeeded()
+
     }
 }
