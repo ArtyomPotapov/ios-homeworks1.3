@@ -76,6 +76,7 @@ class ProfileHeaderView: UIView, UITextFieldDelegate {
     
     @objc func tappedButton(){
         if !isButtonAbove {
+            guard checkText() else {return}
             statusTextField.text = setStatusTextField.text ?? ""
         }
         
@@ -87,6 +88,18 @@ class ProfileHeaderView: UIView, UITextFieldDelegate {
             self.showStatusButton.setTitle(self.buttonTitle, for: .normal)
             self.showStatusButton.setTitle(self.buttonTitle, for: .highlighted)
             
+    }
+    
+    func checkText() -> Bool {
+        if setStatusTextField.text == "" {
+            setStatusTextField.layer.borderColor = UIColor.systemRed.cgColor
+            setStatusTextField.layer.borderWidth = 5
+            return false
+        } else {
+            setStatusTextField.layer.borderWidth = 1
+            setStatusTextField.layer.borderColor = UIColor.black.cgColor
+            return true
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
