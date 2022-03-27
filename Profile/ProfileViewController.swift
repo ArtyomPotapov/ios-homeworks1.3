@@ -15,7 +15,7 @@ struct PostModel {
     let author: String
     let description: String
     let image: String
-    let likes: Int
+    var likes: Int
     let views: Int
 }
 
@@ -51,6 +51,8 @@ class ProfileViewController: UIViewController {
         NSLayoutConstraint.activate([tableTop, tableLeft, tableBottom, tableTrailing])
     }
 }
+
+
 extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
    
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -59,8 +61,8 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 1   {
-            return posts.count}
-        else {
+            return posts.count
+        } else {
             return 1
         }
     }
@@ -74,9 +76,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             let post = posts[indexPath.row ]
             cell.setup(post: post)
             return cell
-        }
-        
-        else {
+        } else {
             let cell = PhotoTableViewCell(style: .default, reuseIdentifier: "PhotoCell")
             return cell
         }
@@ -100,17 +100,23 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        if indexPath.section == 1 {
-        return false
-        } else {
-            return true
-        }
-    }
+//    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+//        if indexPath.section == 1 {
+//        return false
+//        } else {
+//            return true
+//        }
+//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             let vc = PhotosViewController()
+            navigationController?.pushViewController(vc, animated: true)
+            tableView.deselectRow(at: indexPath, animated: false)
+        } else {
+            let vc = DetailDescriptionViewController()
+            vc.numberRow = indexPath.row
+            posts[indexPath.row].likes += 1
             navigationController?.pushViewController(vc, animated: true)
             tableView.deselectRow(at: indexPath, animated: false)
         }

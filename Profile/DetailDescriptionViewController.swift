@@ -1,16 +1,28 @@
 //
-//  PostTableViewCell.swift
+//  DetailDescriptionViewController.swift
 //  Navigation1.3
 //
-//  Created by Artyom Potapov on 07.03.2022.
+//  Created by Artyom Potapov on 27.03.2022.
 //
 
 import UIKit
 
-class PostTableViewCell: UITableViewCell {
+class DetailDescriptionViewController: UIViewController {
     
-    let tapLikes = UITapGestureRecognizer()
+    var numberRow: Int? 
 
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
+    
+    private lazy var contentView: UIView = {
+        let contentView = UIView()
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        return contentView
+    }()
+    
     private lazy var bottomStackView: UIStackView = {
        let buttomStackView = UIStackView()
         buttomStackView.axis = .horizontal
@@ -64,16 +76,11 @@ class PostTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Детальное описание поста"
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
         contentView.addSubview(stackView)
         stackView.addArrangedSubview(authorLabel)
         stackView.addArrangedSubview(myImageView)
@@ -82,49 +89,53 @@ class PostTableViewCell: UITableViewCell {
         bottomStackView.addArrangedSubview(viewsLabel)
         bottomStackView.addArrangedSubview(likesLabel)
         addMyConstraints()
-        likesLabel.addGestureRecognizer(tapLikes)
-        tapLikes.addTarget(self, action: #selector(addLikes))
-
+        guard let numberRow = numberRow else {return}
+        setup(post: posts[numberRow])
         
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     func addMyConstraints(){
+        
+        let scrollTop = scrollView.topAnchor.constraint(equalTo: view.topAnchor)
+        let scrollBottom = scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        let scrollLeft = scrollView.leftAnchor.constraint(equalTo: view.leftAnchor)
+        let scrollRight = scrollView.rightAnchor.constraint(equalTo: view.rightAnchor)
+        
+        let contentTop = contentView.topAnchor.constraint(equalTo: scrollView.topAnchor)
+        let contentBottom = contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
+        let contentXCenter = contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor)
+        let contentYCenter = contentView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor)
+        let contentLeft = contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor)
+        let contentRight = contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor)
+        
         let window = UIWindow(frame: UIScreen.main.bounds)
+        
         let stackTop = stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16)
         let stackLead = stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
         let stackBottom = stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         let stackTrail = stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+        
+        
         let imageWidth = myImageView.widthAnchor.constraint(equalToConstant: window.frame.width)
         let imageHeight = myImageView.heightAnchor.constraint(equalToConstant: window.frame.width)
-        let authorLeding = authorLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16)
+        
+        let authorLeading = authorLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16)
+        let authorTrailing = authorLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
+
         let imageLeading = myImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
         let imageTrailing = myImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
-        let authorTrailing = authorLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
-        NSLayoutConstraint.activate([stackTop, stackLead, stackTrail, stackBottom, imageWidth, imageHeight, authorLeding, imageLeading, imageTrailing, authorTrailing])
+        
+        NSLayoutConstraint.activate([ scrollTop, scrollBottom, scrollLeft,scrollRight, contentTop, contentBottom, contentXCenter, contentYCenter, contentLeft, contentRight, stackTop, stackLead, stackTrail, stackBottom, imageWidth, imageHeight, authorLeading, imageLeading, imageTrailing, authorTrailing])
     }
+   
     
     func setup(post: PostModel){
         self.authorLabel.text = post.author
-        let totalLikes = post.views
-        self.viewsLabel.text = "Views: " + String(totalLikes)
+        self.viewsLabel.text = "Views: " + String(post.views)
         self.likesLabel.text = "Likes: " + String(post.likes)
         self.descriptionLabel.text = post.description
         self.myImageView.image = UIImage(named: "\(post.image)")
         
     }
-    
-    @objc func addLikes(){
-//        posts[self.i]
-        guard let newCount = Int((self.likesLabel.text!.dropFirst(7))) else {return}
-        self.likesLabel.text = "Likes: " + String(newCount + 1)
-        
-        layoutIfNeeded()
-
-    }
-    
-    
 }

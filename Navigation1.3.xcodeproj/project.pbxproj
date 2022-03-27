@@ -47,6 +47,7 @@
 		50CC0E8927E4071600DA13CE /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC0E8827E4071600DA13CE /* PhotosViewController.swift */; };
 		50CC0E8D27E6429800DA13CE /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC0E8C27E6429800DA13CE /* MyCollectionViewCell.swift */; };
 		50CC0EAF27ECDD4E00DA13CE /* GestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC0EAE27ECDD4E00DA13CE /* GestureViewController.swift */; };
+		50CC0EB127F0D0C200DA13CE /* DetailDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC0EB027F0D0C200DA13CE /* DetailDescriptionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		50CC0E8827E4071600DA13CE /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		50CC0E8C27E6429800DA13CE /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		50CC0EAE27ECDD4E00DA13CE /* GestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureViewController.swift; sourceTree = "<group>"; };
+		50CC0EB027F0D0C200DA13CE /* DetailDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDescriptionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,8 +144,9 @@
 		50A2FFB427C0250F006A437C /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				50A2FFAC27BB0F10006A437C /* ProfileViewController.swift */,
+				50CC0EB027F0D0C200DA13CE /* DetailDescriptionViewController.swift */,
 				50232A1D27D5718D006A657E /* PostTableViewCell.swift */,
+				50A2FFAC27BB0F10006A437C /* ProfileViewController.swift */,
 				50CC0E3327E3D2C300DA13CE /* PhotoTableViewCell.swift */,
 				50CC0E8827E4071600DA13CE /* PhotosViewController.swift */,
 				50CC0E8C27E6429800DA13CE /* MyCollectionViewCell.swift */,
@@ -290,6 +293,7 @@
 				50CC0E8927E4071600DA13CE /* PhotosViewController.swift in Sources */,
 				50A2FF9927BAE50D006A437C /* SceneDelegate.swift in Sources */,
 				50232A1C27D56382006A657E /* ProfileTableHeaderView.swift in Sources */,
+				50CC0EB127F0D0C200DA13CE /* DetailDescriptionViewController.swift in Sources */,
 				50CC0E3427E3D2C300DA13CE /* PhotoTableViewCell.swift in Sources */,
 				50A2FFB327C018A0006A437C /* TabBar.swift in Sources */,
 				50232A1E27D5718D006A657E /* PostTableViewCell.swift in Sources */,
