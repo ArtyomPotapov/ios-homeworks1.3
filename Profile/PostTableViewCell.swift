@@ -56,7 +56,7 @@ class PostTableViewCell: UITableViewCell {
     private lazy var likesLabel: UILabel = {
         let likesLabel = UILabel()
         likesLabel.isUserInteractionEnabled = true
-
+        likesLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
         likesLabel.translatesAutoresizingMaskIntoConstraints = false
         return likesLabel
     }()
@@ -103,12 +103,13 @@ class PostTableViewCell: UITableViewCell {
         let stackBottom = stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         let stackTrail = stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         let imageWidth = myImageView.widthAnchor.constraint(equalToConstant: window.frame.width)
-        let imageHeight = myImageView.heightAnchor.constraint(equalToConstant: window.frame.width)
+        let imageHeight = myImageView.heightAnchor.constraint(lessThanOrEqualToConstant: window.frame.width)
         let authorLeding = authorLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16)
         let imageLeading = myImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
         let imageTrailing = myImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         let authorTrailing = authorLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
-        NSLayoutConstraint.activate([stackTop, stackLead, stackTrail, stackBottom, imageWidth, imageHeight, authorLeding, imageLeading, imageTrailing, authorTrailing])
+        let likesWidth = likesLabel.widthAnchor.constraint(equalToConstant: 80)
+        NSLayoutConstraint.activate([stackTop, stackLead, stackTrail, stackBottom, imageWidth, imageHeight, authorLeding, imageLeading, likesWidth, imageTrailing, authorTrailing])
     }
     
     func setup(post: PostModel){

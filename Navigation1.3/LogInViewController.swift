@@ -110,35 +110,35 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }()
     
     @objc func showProfileVC(){
-//        if checkText() {
+        if checkText() {
             let profileVC = ProfileViewController()
             navigationController?.pushViewController(profileVC, animated: true)
-//        }
-//    }
-//
-//    func checkText() -> Bool {
-//        if emailField.text == "" {
-//            fieldUnderEmail.backgroundColor = .systemRed
-//            return false
-//        } else {
-//            fieldUnderEmail.backgroundColor = .none
-//        }
-//
-//        if passwordField.text == "" {
-//            fieldUnderPassword.backgroundColor = .systemRed
-//            return false
-//        } else {
-//            fieldUnderPassword.backgroundColor = .none
-//        }
-//
-//        if emailField.text!.count < 5 || passwordField.text!.count < 5 {
-//            errorLabel.isHidden = false
-//            return false
-//        } else {
-//            errorLabel.isHidden = true
-//        }
-//
-//        return checkLoginAndPassword() ? true : false
+        }
+    }
+
+    func checkText() -> Bool {
+        if emailField.text == "" {
+            fieldUnderEmail.backgroundColor = .systemRed
+            return false
+        } else {
+            fieldUnderEmail.backgroundColor = .none
+        }
+
+        if passwordField.text == "" {
+            fieldUnderPassword.backgroundColor = .systemRed
+            return false
+        } else {
+            fieldUnderPassword.backgroundColor = .none
+        }
+
+        if emailField.text!.count < 5 || passwordField.text!.count < 5 {
+            errorLabel.isHidden = false
+            return false
+        } else {
+            errorLabel.isHidden = true
+        }
+
+        return checkLoginAndPassword() ? true : false
         
     }
     
@@ -192,8 +192,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     
         let stackHeight = stackView.heightAnchor.constraint(equalToConstant: 100)
         let stackTop = stackView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 120)
-        let stackLeading = stackView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16)
-        let stackTrailing = stackView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16)
+        let stackLeading = stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16)
+        let stackTrailing = stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
         
         let separatorHeight = separator.heightAnchor.constraint(equalToConstant: 0.5)
         let separatorTra = separator.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: 0)
