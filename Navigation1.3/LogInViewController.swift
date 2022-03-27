@@ -110,35 +110,35 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }()
     
     @objc func showProfileVC(){
-        if checkText() {
+//        if checkText() {
             let profileVC = ProfileViewController()
             navigationController?.pushViewController(profileVC, animated: true)
-        }
-    }
-    
-    func checkText() -> Bool {
-        if emailField.text == "" {
-            fieldUnderEmail.backgroundColor = .systemRed
-            return false
-        } else {
-            fieldUnderEmail.backgroundColor = .none
-        }
-        
-        if passwordField.text == "" {
-            fieldUnderPassword.backgroundColor = .systemRed
-            return false
-        } else {
-            fieldUnderPassword.backgroundColor = .none
-        }
-        
-        if emailField.text!.count < 5 || passwordField.text!.count < 5 {
-            errorLabel.isHidden = false
-            return false
-        } else {
-            errorLabel.isHidden = true
-        }
-        
-        return checkLoginAndPassword() ? true : false
+//        }
+//    }
+//
+//    func checkText() -> Bool {
+//        if emailField.text == "" {
+//            fieldUnderEmail.backgroundColor = .systemRed
+//            return false
+//        } else {
+//            fieldUnderEmail.backgroundColor = .none
+//        }
+//
+//        if passwordField.text == "" {
+//            fieldUnderPassword.backgroundColor = .systemRed
+//            return false
+//        } else {
+//            fieldUnderPassword.backgroundColor = .none
+//        }
+//
+//        if emailField.text!.count < 5 || passwordField.text!.count < 5 {
+//            errorLabel.isHidden = false
+//            return false
+//        } else {
+//            errorLabel.isHidden = true
+//        }
+//
+//        return checkLoginAndPassword() ? true : false
         
     }
     

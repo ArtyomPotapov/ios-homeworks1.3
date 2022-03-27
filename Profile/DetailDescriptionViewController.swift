@@ -9,7 +9,8 @@ import UIKit
 
 class DetailDescriptionViewController: UIViewController {
     
-    var numberRow: Int? 
+    var numberRow: Int?
+    var posts = [PostModel]()
 
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -79,6 +80,8 @@ class DetailDescriptionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Детальное описание поста"
+        
+        view.backgroundColor = .white
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubview(stackView)

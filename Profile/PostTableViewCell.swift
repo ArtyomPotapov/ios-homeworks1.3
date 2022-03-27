@@ -6,10 +6,14 @@
 //
 
 import UIKit
+protocol AddLikesDelegate {
+    func addLikes(cell: PostTableViewCell)
+}
 
 class PostTableViewCell: UITableViewCell {
     
     let tapLikes = UITapGestureRecognizer()
+    var delegate: AddLikesDelegate?
 
     private lazy var bottomStackView: UIStackView = {
        let buttomStackView = UIStackView()
@@ -118,10 +122,9 @@ class PostTableViewCell: UITableViewCell {
     }
     
     @objc func addLikes(){
-//        posts[self.i]
         guard let newCount = Int((self.likesLabel.text!.dropFirst(7))) else {return}
         self.likesLabel.text = "Likes: " + String(newCount + 1)
-        
+        delegate?.addLikes(cell: self)
         layoutIfNeeded()
 
     }

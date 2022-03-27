@@ -16,12 +16,13 @@ struct PostModel {
     let description: String
     let image: String
     var likes: Int
-    let views: Int
+    var views: Int
 }
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, AddLikesDelegate {
     var height: CGFloat = 400
     var heightHeader = true
+    var posts = [PostModel]()
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
@@ -40,6 +41,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         title = "Профиль"
         view.addSubview(tableView)
+        posts = postsAll
         addConstraint()
     }
    
@@ -61,7 +63,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 1   {
-            return posts.count
+            return postsAll.count
         } else {
             return 1
         }
@@ -75,9 +77,11 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             }
             let post = posts[indexPath.row ]
             cell.setup(post: post)
+            cell.delegate = self
             return cell
         } else {
             let cell = PhotoTableViewCell(style: .default, reuseIdentifier: "PhotoCell")
+            
             return cell
         }
     }
@@ -100,13 +104,6 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-//    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-//        if indexPath.section == 1 {
-//        return false
-//        } else {
-//            return true
-//        }
-//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
@@ -114,11 +111,21 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             navigationController?.pushViewController(vc, animated: true)
             tableView.deselectRow(at: indexPath, animated: false)
         } else {
+            posts[indexPath.row].views += 1
+            tableView.reloadRows(at: [indexPath], with: .none)
             let vc = DetailDescriptionViewController()
             vc.numberRow = indexPath.row
-            posts[indexPath.row].likes += 1
+            vc.posts = posts
             navigationController?.pushViewController(vc, animated: true)
             tableView.deselectRow(at: indexPath, animated: false)
         }
     }
+    
+    func addLikes(cell: PostTableViewCell) {
+        guard let indexPath = self.tableView.indexPath(for: cell) else { return }
+        posts[indexPath.row].likes += 1
+    }
+    
 }
+
+
