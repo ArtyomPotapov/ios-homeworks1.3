@@ -86,6 +86,17 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         return passwordField
     }()
     
+    private lazy var errorLabel: UILabel = {
+        let errorLabel = UILabel()
+        errorLabel.isHidden = true
+        errorLabel.text = "Поля должны содержать не менее 5 символов"
+        errorLabel.font = .systemFont(ofSize: 11, weight: .bold)
+        errorLabel.textColor = .systemPink
+        errorLabel.textAlignment = .center
+        errorLabel.translatesAutoresizingMaskIntoConstraints = false
+        return errorLabel
+    }()
+    
     private lazy var button: UIButton = {
         let button = UIButton()
         button.setBackgroundImage(UIImage(named: "blue_pixel"), for: .normal)
@@ -99,22 +110,34 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }()
     
     @objc func showProfileVC(){
+        if checkText() {
+            let profileVC = ProfileViewController()
+            navigationController?.pushViewController(profileVC, animated: true)
+        }
+    }
+    
+    func checkText() -> Bool {
         if emailField.text == "" {
             fieldUnderEmail.backgroundColor = .systemRed
-            return
+            return false
         } else {
             fieldUnderEmail.backgroundColor = .none
         }
+        
         if passwordField.text == "" {
             fieldUnderPassword.backgroundColor = .systemRed
-            return
+            return false
         } else {
             fieldUnderPassword.backgroundColor = .none
         }
         
-        
-        let profileVC = ProfileViewController()
-        navigationController?.pushViewController(profileVC, animated: true)
+        if emailField.text!.count < 5 || passwordField.text!.count < 5 {
+            errorLabel.isHidden = false
+            return false
+        } else {
+            errorLabel.isHidden = true
+        }
+        return true
     }
     
     
@@ -131,6 +154,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         stackView.addArrangedSubview(fieldUnderPassword)
         fieldUnderEmail.addSubview(emailField)
         fieldUnderPassword.addSubview(passwordField)
+        contentView.addSubview(errorLabel)
         addConstr()
         emailField.delegate = self
         passwordField.delegate = self
@@ -186,7 +210,13 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         let buttonTrailing = button.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16)
         let buttonHeight = button.heightAnchor.constraint(equalToConstant: 50)
         
-        NSLayoutConstraint.activate([scrollTop, scrollLeft, scrollRight, scrollBottom, contentTop,  contentBottom,  contentXCenter, contentYCenter, contentLeft, contentRight, imageHeight, imageWidth, imageCenter, imageTop, stackHeight, stackTop, stackLeading, stackTrailing, separatorHeight, emailLeading,  emailTrailing, separatorTra, separatorLeading, buttonTop, buttonLeading, buttonTrailing, buttonHeight, fieldUnderEmailLeading, fieldUnderEmailTrailing, fieldUnderEmailTop, fieldUnderEmailHeight, fieldUnderPasswordLeading, fieldUnderPasswordTrailing, fieldUnderPasswordBottom,  fieldUnderPasswordHeight, passwordLeading, passwordTrailing])
+        
+        let errorLabelBotton = errorLabel.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -16)
+        let errorLabelLeading = errorLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16)
+        let errorLabelTrailing = errorLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16)
+//        let buttonHeight = button.heightAnchor.constraint(equalToConstant: 50)
+        
+        NSLayoutConstraint.activate([scrollTop, scrollLeft, scrollRight, scrollBottom, contentTop,  contentBottom,  contentXCenter, contentYCenter, contentLeft, contentRight, imageHeight, imageWidth, imageCenter, imageTop, stackHeight, stackTop, stackLeading, stackTrailing, separatorHeight, emailLeading,  emailTrailing, separatorTra, separatorLeading, buttonTop, buttonLeading, buttonTrailing, buttonHeight, fieldUnderEmailLeading, fieldUnderEmailTrailing, fieldUnderEmailTop, fieldUnderEmailHeight, fieldUnderPasswordLeading, fieldUnderPasswordTrailing, fieldUnderPasswordBottom,  fieldUnderPasswordHeight, passwordLeading, passwordTrailing, errorLabelBotton, errorLabelLeading, errorLabelTrailing])
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
