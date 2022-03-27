@@ -55,10 +55,21 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         return separator
     }()
     
+    private lazy var fieldUnderEmail: UIView = {
+        let fieldUnderEmail = UIView(frame: .zero)
+        fieldUnderEmail.translatesAutoresizingMaskIntoConstraints = false
+        return fieldUnderEmail
+    }()
+    
+    private lazy var fieldUnderPassword: UIView = {
+        let fieldUnderPassword = UIView(frame: .zero)
+        fieldUnderPassword.translatesAutoresizingMaskIntoConstraints = false
+        return fieldUnderPassword
+    }()
+    
     
     private lazy var emailField: UITextField = {
         let emailField = UITextField()
-        emailField.backgroundColor = .systemGray6
         emailField.placeholder = "Email or phone"
         emailField.textColor = .black
         emailField.autocapitalizationType = .none
@@ -70,7 +81,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     private lazy var passwordField: UITextField = {
         let passwordField = UITextField()
         passwordField.placeholder = "Password"
-        passwordField.backgroundColor = .systemGray6
         passwordField.isSecureTextEntry = true
         passwordField.translatesAutoresizingMaskIntoConstraints = false
         return passwordField
@@ -89,9 +99,24 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }()
     
     @objc func showProfileVC(){
+        if emailField.text == "" {
+            fieldUnderEmail.backgroundColor = .systemRed
+            return
+        } else {
+            fieldUnderEmail.backgroundColor = .none
+        }
+        if passwordField.text == "" {
+            fieldUnderPassword.backgroundColor = .systemRed
+            return
+        } else {
+            fieldUnderPassword.backgroundColor = .none
+        }
+        
+        
         let profileVC = ProfileViewController()
         navigationController?.pushViewController(profileVC, animated: true)
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,9 +126,11 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         contentView.addSubview(imageView)
         contentView.addSubview(stackView)
         contentView.addSubview(button)
-        stackView.addArrangedSubview(emailField)
+        stackView.addArrangedSubview(fieldUnderEmail)
         stackView.addArrangedSubview(separator)
-        stackView.addArrangedSubview(passwordField)
+        stackView.addArrangedSubview(fieldUnderPassword)
+        fieldUnderEmail.addSubview(emailField)
+        fieldUnderPassword.addSubview(passwordField)
         addConstr()
         emailField.delegate = self
         passwordField.delegate = self
@@ -137,15 +164,29 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         let separatorTra = separator.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: 0)
         let separatorLeading = separator.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 0)
 
-        let emailLeading = emailField.leftAnchor.constraint(equalTo: stackView.leftAnchor, constant: 10)
-        let emailTrailing = emailField.rightAnchor.constraint(equalTo: stackView.rightAnchor, constant: -10)
+        let fieldUnderEmailLeading = fieldUnderEmail.leftAnchor.constraint(equalTo: stackView.leftAnchor)
+        let fieldUnderEmailTrailing = fieldUnderEmail.rightAnchor.constraint(equalTo: stackView.rightAnchor)
+        let fieldUnderEmailTop = fieldUnderEmail.topAnchor.constraint(equalTo: stackView.topAnchor)
+        let fieldUnderEmailHeight = fieldUnderEmail.heightAnchor.constraint(equalTo: emailField.heightAnchor)
+        
+        let fieldUnderPasswordLeading = fieldUnderPassword.leftAnchor.constraint(equalTo: stackView.leftAnchor)
+        let fieldUnderPasswordTrailing = fieldUnderPassword.rightAnchor.constraint(equalTo: stackView.rightAnchor)
+        let fieldUnderPasswordBottom = fieldUnderPassword.bottomAnchor.constraint(equalTo: stackView.bottomAnchor)
+        let fieldUnderPasswordHeight = fieldUnderPassword.heightAnchor.constraint(equalTo: passwordField.heightAnchor)
+
+        
+        let emailLeading = emailField.leftAnchor.constraint(equalTo: fieldUnderEmail.leftAnchor, constant: 10)
+        let emailTrailing = emailField.rightAnchor.constraint(equalTo: fieldUnderEmail.rightAnchor, constant: -10)
+        
+        let passwordLeading = passwordField.leftAnchor.constraint(equalTo: fieldUnderPassword.leftAnchor, constant: 10)
+        let passwordTrailing = passwordField.rightAnchor.constraint(equalTo: fieldUnderPassword.rightAnchor, constant: -10)
 
         let buttonTop = button.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 16)
         let buttonLeading = button.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16)
         let buttonTrailing = button.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16)
         let buttonHeight = button.heightAnchor.constraint(equalToConstant: 50)
         
-        NSLayoutConstraint.activate([scrollTop, scrollLeft, scrollRight, scrollBottom, contentTop,  contentBottom,  contentXCenter, contentYCenter, contentLeft, contentRight, imageHeight, imageWidth, imageCenter, imageTop, stackHeight, stackTop, stackLeading, stackTrailing, separatorHeight, emailLeading,  emailTrailing, separatorTra, separatorLeading, buttonTop, buttonLeading, buttonTrailing, buttonHeight])
+        NSLayoutConstraint.activate([scrollTop, scrollLeft, scrollRight, scrollBottom, contentTop,  contentBottom,  contentXCenter, contentYCenter, contentLeft, contentRight, imageHeight, imageWidth, imageCenter, imageTop, stackHeight, stackTop, stackLeading, stackTrailing, separatorHeight, emailLeading,  emailTrailing, separatorTra, separatorLeading, buttonTop, buttonLeading, buttonTrailing, buttonHeight, fieldUnderEmailLeading, fieldUnderEmailTrailing, fieldUnderEmailTop, fieldUnderEmailHeight, fieldUnderPasswordLeading, fieldUnderPasswordTrailing, fieldUnderPasswordBottom,  fieldUnderPasswordHeight, passwordLeading, passwordTrailing])
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
