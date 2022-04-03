@@ -23,9 +23,7 @@ class PhotosViewController: UIViewController {
         bigImageView.alpha = 0
         bigImageView.backgroundColor = .red
         bigImageView.isUserInteractionEnabled = true
-
         bigImageView.translatesAutoresizingMaskIntoConstraints = false
-
         return bigImageView
     }()
     
@@ -65,15 +63,6 @@ class PhotosViewController: UIViewController {
         view.bringSubviewToFront(bigImageView)
         addConstr()
         setGesture()
-        
-        let fileManager = FileManager.default
-        let path = Bundle.main.resourcePath!
-        let items = try! fileManager.contentsOfDirectory(atPath: path)
-        for item in items {
-            if item.hasPrefix("prikolnye_fotografii_kotov_141_foto_") {
-                photos.append(item)
-            }
-        }
     }
     
     func addConstr(){
@@ -105,7 +94,6 @@ class PhotosViewController: UIViewController {
     func setGesture(){
         tapGestureRecognizer.addTarget(self, action: #selector(handleTapGesture(_:)))
         bigImageView.addGestureRecognizer(tapGestureRecognizer)
-        
     }
 
     @objc func handleTapGesture(_ tapGR:UITapGestureRecognizer){
@@ -122,11 +110,7 @@ class PhotosViewController: UIViewController {
                 self.widthColl?.constant = rrreccc.width
                 self.heightColl?.constant = rrreccc.height
                 self.view.layoutIfNeeded()
-            } completion: { _ in
-                
             }
-        } else {
-            print("qwqwqqwqw")
         }
     }
 }
@@ -140,7 +124,6 @@ extension PhotosViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyPhotoCell", for: indexPath) as! MyCollectionViewCell
         cell.setImage(name: photos[indexPath.item])
-        
         return cell
     }
     
@@ -152,22 +135,17 @@ extension PhotosViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         let cell = collectionView.cellForItem(at: indexPath)
-    
         guard let frameCell = cell?.frame else { return  }
         print(frameCell)
         reccc = frameCell
         setBigImageView(indexPath: indexPath)
         addConstrBig()
-
     }
-    
     
     func setBigImageView(indexPath: IndexPath){
         let image = photos[indexPath.item]
         bigImageView.image = UIImage(named: image)
-
     }
     
     func addConstrBig(){
@@ -178,18 +156,14 @@ extension PhotosViewController: UICollectionViewDelegate, UICollectionViewDataSo
         heightColl?.constant = rrreccc.height
         self.view.layoutIfNeeded()
         self.isExpanded = true
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: 0.2) {
             self.bigImageView.alpha = 1
             self.fonView.alpha = 1
             self.widthColl?.constant =  self.view.frame.width
             self.heightColl?.constant = self.view.frame.width
-            self.topColl?.constant = (self.view.frame.height - self.view.frame.width) / 2
+            self.topColl?.constant = (self.view.frame.height - self.view.frame.width) / 2 - 50
             self.leadingColl?.constant = 0
             self.view.layoutIfNeeded()
-        }, completion: { _ in
-            
-        })
-       
+        }
     }
-    
 }
