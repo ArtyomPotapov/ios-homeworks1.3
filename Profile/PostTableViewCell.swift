@@ -109,7 +109,9 @@ class PostTableViewCell: UITableViewCell {
         let imageTrailing = myImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         let authorTrailing = authorLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
         let likesWidth = likesLabel.widthAnchor.constraint(equalToConstant: 80)
-        NSLayoutConstraint.activate([stackTop, stackLead, stackTrail, stackBottom, imageWidth, imageHeight, authorLeding, imageLeading, likesWidth, imageTrailing, authorTrailing])
+        let bottomStack = stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
+
+        NSLayoutConstraint.activate([stackTop, stackLead, stackTrail, stackBottom, imageWidth, imageHeight, authorLeding, imageLeading, likesWidth, imageTrailing, authorTrailing, bottomStack])
     }
     
     func setup(post: PostModel){
