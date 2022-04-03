@@ -20,7 +20,10 @@ class ProfileHeaderView: UIView, UITextFieldDelegate {
     private var isButtonAbove = true
     private var buttonTitle = "Set status"
     var delegate: ViewExpandable?
-    var delegate2: ViewExpandable?
+    var delegate2: QwePTHV?
+    let tapGestureRecognizer = UITapGestureRecognizer()
+    
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,7 +32,10 @@ class ProfileHeaderView: UIView, UITextFieldDelegate {
         setshowStatusButton()
         setnewTextField()
         setStatusTextField.delegate = self
+        
     }
+    
+    
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -50,6 +56,16 @@ class ProfileHeaderView: UIView, UITextFieldDelegate {
         avatarImageView.clipsToBounds = true
         avatarImageView.layer.borderColor = UIColor.white.cgColor
         avatarImageView.layer.borderWidth = 3
+        avatarImageView.isUserInteractionEnabled = true
+        avatarImageView.addGestureRecognizer(tapGestureRecognizer)
+        tapGestureRecognizer.addTarget(self, action: #selector(handleTap(_:)))
+    }
+    
+    @objc func handleTap(_ tapGR:UITapGestureRecognizer){
+        guard tapGestureRecognizer === tapGR else { return }
+        self.delegate2?.qwe()
+        print("0000000")
+
     }
     
     private func setshowStatusButton(){
@@ -64,7 +80,7 @@ class ProfileHeaderView: UIView, UITextFieldDelegate {
         showStatusButton.layer.shadowRadius = 4
         showStatusButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
         showStatusButton.layer.zPosition = 1
-
+       
     }
     
     private func setnewTextField(){
@@ -83,7 +99,7 @@ class ProfileHeaderView: UIView, UITextFieldDelegate {
         buttonTopConstraint.constant = isButtonAbove ? 70 : 16
         buttonTitle = isButtonAbove ? "Show status" : "Set status"
             self.delegate?.expandedView(isExpand: self.isButtonAbove)
-            self.delegate2?.expandedView(isExpand: self.isButtonAbove)
+//            self.delegate2?.expandedView(isExpand: self.isButtonAbove)
             self.isButtonAbove.toggle()
             self.showStatusButton.setTitle(self.buttonTitle, for: .normal)
             self.showStatusButton.setTitle(self.buttonTitle, for: .highlighted)

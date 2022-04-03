@@ -11,6 +11,12 @@ protocol ViewExpandable: AnyObject {
     func expandedView(isExpand: Bool)
 }
 
+protocol Qwe: AnyObject {
+    func qwe()
+    
+}
+
+
 struct PostModel {
     let author: String
     let description: String
@@ -23,6 +29,40 @@ class ProfileViewController: UIViewController, AddLikesDelegate {
     var height: CGFloat = 400
     var heightHeader = true
     var posts = [PostModel]()
+    var widthViewConstraint: NSLayoutConstraint?
+    var heightViewConstraint: NSLayoutConstraint?
+    var topConstraint: NSLayoutConstraint?
+    var leadingConstraint: NSLayoutConstraint?
+    
+    var isExpanded = false
+    var tapGestureRecognizer = UITapGestureRecognizer()
+    
+    private lazy var myImageView: UIImageView = {
+        
+        var myImageView = UIImageView()
+        myImageView.isUserInteractionEnabled = true
+        myImageView.translatesAutoresizingMaskIntoConstraints = false
+        return myImageView
+    }()
+    
+    private lazy var fonView: UIView = {
+        var fonView = UIView()
+        fonView.alpha = 0
+        fonView.backgroundColor = .white
+        fonView.translatesAutoresizingMaskIntoConstraints = false
+        return fonView
+    }()
+    
+    private lazy var xCircle: UIImageView = {
+        let xCircle = UIImageView()
+        xCircle.image = UIImage(systemName: "x.circle.fill")
+        xCircle.tintColor = .black
+        xCircle.alpha = 0
+        xCircle.isUserInteractionEnabled = true
+        xCircle.translatesAutoresizingMaskIntoConstraints = false
+        return xCircle
+    }()
+    
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
@@ -42,16 +82,87 @@ class ProfileViewController: UIViewController, AddLikesDelegate {
         title = "Профиль"
         view.addSubview(tableView)
         posts = postsAll
+        
+        view.addSubview(myImageView)
+        view.addSubview(fonView)
+        view.addSubview(xCircle)
+        view.bringSubviewToFront(fonView)
+        view.bringSubviewToFront(xCircle)
+        view.bringSubviewToFront(myImageView)
+        setImage()
         addConstraint()
+        
+        setGesture()
     }
    
+    func setImage(){
+        myImageView.alpha = 0
+        myImageView.image = UIImage(named: "musya")
+        myImageView.contentMode = .scaleAspectFill
+        myImageView.layer.cornerRadius = 60
+        myImageView.clipsToBounds = true
+        myImageView.layer.borderColor = UIColor.white.cgColor
+        myImageView.layer.borderWidth = 3
+    }
+    
     func addConstraint(){
         let tableTop = tableView.topAnchor.constraint(equalTo: view.topAnchor)
         let tableBottom = tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         let tableLeft = tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
         let tableTrailing = tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        NSLayoutConstraint.activate([tableTop, tableLeft, tableBottom, tableTrailing])
+        
+        let fonTop = fonView.topAnchor.constraint(equalTo: view.topAnchor)
+        let fonBottom = fonView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        let fonTrail = fonView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        let fonLeading = fonView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+        
+        
+        let xCircleTop = xCircle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,  constant: 1)
+        let xCircleTrail = xCircle.trailingAnchor.constraint(equalTo: view.trailingAnchor,  constant: -5)
+        let xCircleWidth = xCircle.widthAnchor.constraint(equalToConstant: 35)
+        let xCircleHeight = xCircle.heightAnchor.constraint(equalToConstant: 35)
+        
+        topConstraint = myImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16)
+        leadingConstraint = myImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
+        heightViewConstraint =  myImageView.heightAnchor.constraint(equalToConstant: 120)
+        widthViewConstraint =  myImageView.widthAnchor.constraint(equalToConstant: 120)
+        
+        NSLayoutConstraint.activate([tableTop, tableLeft, tableBottom, tableTrailing, topConstraint, leadingConstraint, heightViewConstraint, widthViewConstraint, fonTop, fonBottom, fonTrail, fonLeading, xCircleTop, xCircleTrail, xCircleWidth, xCircleHeight].compactMap({$0}))
+        
     }
+    
+    func setGesture(){
+        tapGestureRecognizer.addTarget(self, action: #selector(handleTapGesture(_:)))
+        myImageView.addGestureRecognizer(tapGestureRecognizer)
+
+    }
+
+    @objc func handleTapGesture(_ tapGR:UITapGestureRecognizer){
+        guard tapGestureRecognizer === tapGR else { return }
+        self.isExpanded.toggle()
+        self.widthViewConstraint?.constant = self.isExpanded ? self.view.frame.width : 120
+        self.heightViewConstraint?.constant = self.isExpanded ? self.view.frame.width : 120
+        
+        self.topConstraint?.constant = self.isExpanded ? (self.view.frame.height - self.view.frame.width) / 2  : 70
+        self.leadingConstraint?.constant = self.isExpanded ? 0 : 20
+
+        if isExpanded {
+            xCircle.addGestureRecognizer(tapGestureRecognizer)
+        } else {
+            myImageView.addGestureRecognizer(tapGestureRecognizer)
+        }
+        
+        UIView.animate(withDuration: 0.1){
+            self.myImageView.layer.cornerRadius = self.isExpanded ? 0 : 60
+            self.fonView.alpha = self.isExpanded ? 1 : 0
+            self.xCircle.alpha = self.isExpanded ? 1 : 0
+            self.myImageView.alpha = self.isExpanded ? 1 : 0
+            self.view.layoutIfNeeded()
+        } completion: { _ in
+
+        }
+    }
+    
 }
 
 
@@ -90,6 +201,8 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         if section == 0 {
         let header = ProfileTableHeaderView()
         header.delegate = self
+        header.delegatePVC = self
+            
         return header
         } else {
             return nil
@@ -128,4 +241,32 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     
 }
 
+extension ProfileViewController: Qwe {
+    
+        func qwe(){
+            print("1234567890")
+            self.isExpanded.toggle()
+            self.widthViewConstraint?.constant = self.isExpanded ? self.view.frame.width : 120
+            self.heightViewConstraint?.constant = self.isExpanded ? self.view.frame.width : 120
+            
+            self.topConstraint?.constant = self.isExpanded ? (self.view.frame.height - self.view.frame.width) / 2  : 70
+            self.leadingConstraint?.constant = self.isExpanded ? 0 : 20
 
+            if isExpanded {
+                xCircle.addGestureRecognizer(tapGestureRecognizer)
+            } else {
+                myImageView.addGestureRecognizer(tapGestureRecognizer)
+            }
+            
+            UIView.animate(withDuration: 0.1){
+                self.myImageView.layer.cornerRadius = self.isExpanded ? 0 : 60
+                self.fonView.alpha = self.isExpanded ? 1 : 0
+                self.xCircle.alpha = self.isExpanded ? 1 : 0
+                self.myImageView.alpha = self.isExpanded ? 1 : 0
+                self.view.layoutIfNeeded()
+            } completion: { _ in
+
+            }
+        }
+    
+}

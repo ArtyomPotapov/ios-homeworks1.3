@@ -6,10 +6,18 @@
 //
 
 import UIKit
+protocol QwePTHV: AnyObject {
+    func qwe()
+}
 
-class ProfileTableHeaderView: UIView {
+class ProfileTableHeaderView: UIView, QwePTHV {
+    func qwe() {
+        delegatePVC?.qwe()
+    }
+    
     
     var delegate: ProfileViewController?
+    var delegatePVC: Qwe?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -17,6 +25,8 @@ class ProfileTableHeaderView: UIView {
         self.addSubview(profileHeaderView)
         activateConstraints()
         profileHeaderView.delegate = self
+        profileHeaderView.delegate2 = self
+        
     }
     
     required init?(coder: NSCoder) {

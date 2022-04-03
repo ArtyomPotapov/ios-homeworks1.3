@@ -115,8 +115,8 @@ class PostTableViewCell: UITableViewCell {
     func setup(post: PostModel){
         self.authorLabel.text = post.author
         let totalLikes = post.views
-        self.viewsLabel.text = "Views: " + String(totalLikes)
-        self.likesLabel.text = "Likes: " + String(post.likes)
+        self.viewsLabel.text = "Views: \(totalLikes)"
+        self.likesLabel.text = "Likes: \(post.likes)"
         self.descriptionLabel.text = post.description
         self.myImageView.image = UIImage(named: "\(post.image)")
         
@@ -124,7 +124,7 @@ class PostTableViewCell: UITableViewCell {
     
     @objc func addLikes(){
         guard let newCount = Int((self.likesLabel.text!.dropFirst(7))) else {return}
-        self.likesLabel.text = "Likes: " + String(newCount + 1)
+        self.likesLabel.text = "Likes: \(newCount + 1)"
         delegate?.addLikes(cell: self)
         layoutIfNeeded()
 
