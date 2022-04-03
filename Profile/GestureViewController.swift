@@ -17,7 +17,6 @@ class GestureViewController: UIViewController {
     
     var isExpanded = false
     var tapGestureRecognizer = UITapGestureRecognizer()
-//    let screenWidth
     
     private lazy var myImageView: UIImageView = {
         var myImageView = UIImageView()

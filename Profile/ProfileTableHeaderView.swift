@@ -10,6 +10,7 @@ import UIKit
 class ProfileTableHeaderView: UIView {
     
     var delegate: ProfileViewController?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white

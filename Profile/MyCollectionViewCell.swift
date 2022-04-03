@@ -13,6 +13,7 @@ class MyCollectionViewCell: UICollectionViewCell {
        let myImageView = UIImageView()
         myImageView.translatesAutoresizingMaskIntoConstraints = false
         myImageView.contentMode = .scaleToFill
+        myImageView.isUserInteractionEnabled = true
         return myImageView
     }()
     
