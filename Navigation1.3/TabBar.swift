@@ -21,7 +21,7 @@ class TabBar: UITabBarController {
     }
     
     func setNavigationControllers(){
-        let firstNavigationController = UINavigationController(rootViewController: profileViewController)//feedViewController)
+        let firstNavigationController = UINavigationController(rootViewController: feedViewController)
         firstNavigationController.tabBarItem.title = "FEED"
         firstNavigationController.tabBarItem.image = UIImage(systemName: "pencil.circle")!
         
