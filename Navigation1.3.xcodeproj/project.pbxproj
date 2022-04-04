@@ -111,7 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				50A2FF9527BAE50D006A437C /* Navigation1.3 */,
-				50A2FFB427C0250F006A437C /* Profile */,
 				50A2FF9427BAE50D006A437C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -127,6 +126,7 @@
 		50A2FF9527BAE50D006A437C /* Navigation1.3 */ = {
 			isa = PBXGroup;
 			children = (
+				50CC0E8727E400A300DA13CE /* Photos */,
 				50A2FF9627BAE50D006A437C /* AppDelegate.swift */,
 				50A2FF9827BAE50D006A437C /* SceneDelegate.swift */,
 				50A2FFB227C018A0006A437C /* TabBar.swift */,
@@ -135,15 +135,6 @@
 				5086D29827CC553900EBB547 /* LogInViewController.swift */,
 				50A2FFAA27BB0E9B006A437C /* FeedViewController.swift */,
 				50A2FF9F27BAE513006A437C /* Assets.xcassets */,
-				50A2FFA127BAE513006A437C /* LaunchScreen.storyboard */,
-				50A2FFA427BAE513006A437C /* Info.plist */,
-			);
-			path = Navigation1.3;
-			sourceTree = "<group>";
-		};
-		50A2FFB427C0250F006A437C /* Profile */ = {
-			isa = PBXGroup;
-			children = (
 				50A2FFAC27BB0F10006A437C /* ProfileViewController.swift */,
 				50CC0EAE27ECDD4E00DA13CE /* GestureViewController.swift */,
 				50CC0E8827E4071600DA13CE /* PhotosViewController.swift */,
@@ -156,9 +147,10 @@
 				50A2FFB727C03942006A437C /* View.xib */,
 				50CC0E3527E3D45600DA13CE /* ArrayOfPhotos.swift */,
 				50A2FFB527C02BA2006A437C /* ProfileHeaderView.swift */,
-				50CC0E8727E400A300DA13CE /* Photos */,
+				50A2FFA127BAE513006A437C /* LaunchScreen.storyboard */,
+				50A2FFA427BAE513006A437C /* Info.plist */,
 			);
-			path = Profile;
+			path = Navigation1.3;
 			sourceTree = "<group>";
 		};
 		50CC0E8727E400A300DA13CE /* Photos */ = {
