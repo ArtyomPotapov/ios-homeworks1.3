@@ -143,13 +143,15 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }
     
     func checkLoginAndPassword() -> Bool{
-        if emailField.text != "a@a.ru" && passwordField.text != "12345" {
+        if emailField.text == "a@a.ru" && passwordField.text == "12345" {
+            
+            return true
+        } else {
             let ac = UIAlertController(title: "Ошибка!", message: "Ввведите правильный логин a@a.ru и пароль 12345", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             present(ac, animated: true, completion: nil)
-            return false
+        return false
         }
-        return true
     }
     
     override func viewDidLoad() {
