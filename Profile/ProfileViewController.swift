@@ -16,7 +16,6 @@ protocol Qwe: AnyObject {
     
 }
 
-
 struct PostModel {
     let author: String
     let description: String
@@ -106,28 +105,30 @@ class ProfileViewController: UIViewController, AddLikesDelegate {
     }
     
     func addConstraint(){
-        let tableTop = tableView.topAnchor.constraint(equalTo: view.topAnchor)
-        let tableBottom = tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-        let tableLeft = tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
-        let tableTrailing = tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        
-        let fonTop = fonView.topAnchor.constraint(equalTo: view.topAnchor)
-        let fonBottom = fonView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        let fonTrail = fonView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        let fonLeading = fonView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
-        
-        
-        let xCircleTop = xCircle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,  constant: 1)
-        let xCircleTrail = xCircle.trailingAnchor.constraint(equalTo: view.trailingAnchor,  constant: -5)
-        let xCircleWidth = xCircle.widthAnchor.constraint(equalToConstant: 35)
-        let xCircleHeight = xCircle.heightAnchor.constraint(equalToConstant: 35)
         
         topConstraint = myImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16)
         leadingConstraint = myImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
         heightViewConstraint =  myImageView.heightAnchor.constraint(equalToConstant: 120)
         widthViewConstraint =  myImageView.widthAnchor.constraint(equalToConstant: 120)
         
-        NSLayoutConstraint.activate([tableTop, tableLeft, tableBottom, tableTrailing, topConstraint, leadingConstraint, heightViewConstraint, widthViewConstraint, fonTop, fonBottom, fonTrail, fonLeading, xCircleTop, xCircleTrail, xCircleWidth, xCircleHeight].compactMap({$0}))
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            topConstraint,
+            leadingConstraint,
+            heightViewConstraint,
+            widthViewConstraint,
+            fonView.topAnchor.constraint(equalTo: view.topAnchor),
+            fonView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            fonView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            fonView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            xCircle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,  constant: 1),
+            xCircle.trailingAnchor.constraint(equalTo: view.trailingAnchor,  constant: -5),
+            xCircle.widthAnchor.constraint(equalToConstant: 35),
+            xCircle.heightAnchor.constraint(equalToConstant: 35)
+        ].compactMap({$0}))
         
     }
     
@@ -162,7 +163,6 @@ class ProfileViewController: UIViewController, AddLikesDelegate {
 
         }
     }
-    
 }
 
 
