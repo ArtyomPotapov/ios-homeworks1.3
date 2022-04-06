@@ -47,6 +47,46 @@
 		50CC0E8D27E6429800DA13CE /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC0E8C27E6429800DA13CE /* MyCollectionViewCell.swift */; };
 		50CC0EAF27ECDD4E00DA13CE /* GestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC0EAE27ECDD4E00DA13CE /* GestureViewController.swift */; };
 		50CC0EB127F0D0C200DA13CE /* DetailDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC0EB027F0D0C200DA13CE /* DetailDescriptionViewController.swift */; };
+		50CC0EB627FE5FAD00DA13CE /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A2FFAE27BB1001006A437C /* PostViewController.swift */; };
+		50CC0EB727FE5FAD00DA13CE /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A2FFB527C02BA2006A437C /* ProfileHeaderView.swift */; };
+		50CC0EB827FE5FAD00DA13CE /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC0E8C27E6429800DA13CE /* MyCollectionViewCell.swift */; };
+		50CC0EB927FE5FAD00DA13CE /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5086D29827CC553900EBB547 /* LogInViewController.swift */; };
+		50CC0EBA27FE5FAD00DA13CE /* GestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC0EAE27ECDD4E00DA13CE /* GestureViewController.swift */; };
+		50CC0EBB27FE5FAD00DA13CE /* ArrayOfPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC0E3527E3D45600DA13CE /* ArrayOfPhotos.swift */; };
+		50CC0EBC27FE5FAD00DA13CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A2FF9627BAE50D006A437C /* AppDelegate.swift */; };
+		50CC0EBD27FE5FAD00DA13CE /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A2FFB027BB21E9006A437C /* InfoViewController.swift */; };
+		50CC0EBE27FE5FAD00DA13CE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50232A1927D55038006A657E /* Post.swift */; };
+		50CC0EBF27FE5FAD00DA13CE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A2FFAC27BB0F10006A437C /* ProfileViewController.swift */; };
+		50CC0EC027FE5FAD00DA13CE /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A2FFAA27BB0E9B006A437C /* FeedViewController.swift */; };
+		50CC0EC127FE5FAD00DA13CE /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC0E8827E4071600DA13CE /* PhotosViewController.swift */; };
+		50CC0EC227FE5FAD00DA13CE /* ProfileTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50232A1B27D56382006A657E /* ProfileTableHeaderView.swift */; };
+		50CC0EC327FE5FAD00DA13CE /* DetailDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC0EB027F0D0C200DA13CE /* DetailDescriptionViewController.swift */; };
+		50CC0EC427FE5FAD00DA13CE /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC0E3327E3D2C300DA13CE /* PhotoTableViewCell.swift */; };
+		50CC0EC527FE5FAD00DA13CE /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A2FFB227C018A0006A437C /* TabBar.swift */; };
+		50CC0EC627FE5FAD00DA13CE /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50232A1D27D5718D006A657E /* PostTableViewCell.swift */; };
+		50CC0EC927FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6F27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_13.jpg */; };
+		50CC0ECA27FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_25.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6A27E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_25.jpg */; };
+		50CC0ECB27FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_24.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6527E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_24.jpg */; };
+		50CC0ECC27FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6027E4008B00DA13CE /* prikolnye_fotografii_kotov_141_foto_10.jpg */; };
+		50CC0ECD27FE5FAD00DA13CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50A2FFA127BAE513006A437C /* LaunchScreen.storyboard */; };
+		50CC0ECE27FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E7227E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_15.jpg */; };
+		50CC0ECF27FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_47.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6927E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_47.jpg */; };
+		50CC0ED027FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_39.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E7027E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_39.jpg */; };
+		50CC0ED127FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_29.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6D27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_29.jpg */; };
+		50CC0ED227FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6327E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_7.jpg */; };
+		50CC0ED327FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_55.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6B27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_55.jpg */; };
+		50CC0ED427FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_44.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6427E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_44.jpg */; };
+		50CC0ED527FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_59.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6127E4008B00DA13CE /* prikolnye_fotografii_kotov_141_foto_59.jpg */; };
+		50CC0ED627FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_63.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6C27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_63.jpg */; };
+		50CC0ED727FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_35.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6627E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_35.jpg */; };
+		50CC0ED827FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_26.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6827E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_26.jpg */; };
+		50CC0ED927FE5FAD00DA13CE /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50A2FFB727C03942006A437C /* View.xib */; };
+		50CC0EDA27FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_42.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6E27E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_42.jpg */; };
+		50CC0EDB27FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_68.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E5F27E4008B00DA13CE /* prikolnye_fotografii_kotov_141_foto_68.jpg */; };
+		50CC0EDC27FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_41.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6727E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_41.jpg */; };
+		50CC0EDD27FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_16.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E7127E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_16.jpg */; };
+		50CC0EDE27FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_33.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6227E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_33.jpg */; };
+		50CC0EDF27FE5FAD00DA13CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50A2FF9F27BAE513006A437C /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,10 +132,19 @@
 		50CC0E8C27E6429800DA13CE /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		50CC0EAE27ECDD4E00DA13CE /* GestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureViewController.swift; sourceTree = "<group>"; };
 		50CC0EB027F0D0C200DA13CE /* DetailDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDescriptionViewController.swift; sourceTree = "<group>"; };
+		50CC0EE327FE5FAD00DA13CE /* Navigation1.3 copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Navigation1.3 copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50CC0EE427FE5FAD00DA13CE /* Navigation1.3 copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Navigation1.3 copy-Info.plist"; path = "/Users/artyompotapov/Desktop/Нетология 5 блок iOS-dev интерфейс приложения/Navigation1.3/Navigation1.3 copy-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		50A2FF9027BAE50D006A437C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50CC0EC727FE5FAD00DA13CE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -110,6 +159,7 @@
 			children = (
 				50A2FF9527BAE50D006A437C /* Navigation1.3 */,
 				50A2FF9427BAE50D006A437C /* Products */,
+				50CC0EE427FE5FAD00DA13CE /* Navigation1.3 copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				50A2FF9327BAE50D006A437C /* Navigation1.3.app */,
+				50CC0EE327FE5FAD00DA13CE /* Navigation1.3 copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,6 +248,23 @@
 			productReference = 50A2FF9327BAE50D006A437C /* Navigation1.3.app */;
 			productType = "com.apple.product-type.application";
 		};
+		50CC0EB427FE5FAD00DA13CE /* Navigation1.3 copy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50CC0EE027FE5FAD00DA13CE /* Build configuration list for PBXNativeTarget "Navigation1.3 copy" */;
+			buildPhases = (
+				50CC0EB527FE5FAD00DA13CE /* Sources */,
+				50CC0EC727FE5FAD00DA13CE /* Frameworks */,
+				50CC0EC827FE5FAD00DA13CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Navigation1.3 copy";
+			productName = Navigation1.3;
+			productReference = 50CC0EE327FE5FAD00DA13CE /* Navigation1.3 copy.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -226,6 +294,7 @@
 			projectRoot = "";
 			targets = (
 				50A2FF9227BAE50D006A437C /* Navigation1.3 */,
+				50CC0EB427FE5FAD00DA13CE /* Navigation1.3 copy */,
 			);
 		};
 /* End PBXProject section */
@@ -261,6 +330,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		50CC0EC827FE5FAD00DA13CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50CC0EC927FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_13.jpg in Resources */,
+				50CC0ECA27FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_25.jpg in Resources */,
+				50CC0ECB27FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_24.jpg in Resources */,
+				50CC0ECC27FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_10.jpg in Resources */,
+				50CC0ECD27FE5FAD00DA13CE /* LaunchScreen.storyboard in Resources */,
+				50CC0ECE27FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_15.jpg in Resources */,
+				50CC0ECF27FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_47.jpg in Resources */,
+				50CC0ED027FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_39.jpg in Resources */,
+				50CC0ED127FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_29.jpg in Resources */,
+				50CC0ED227FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_7.jpg in Resources */,
+				50CC0ED327FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_55.jpg in Resources */,
+				50CC0ED427FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_44.jpg in Resources */,
+				50CC0ED527FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_59.jpg in Resources */,
+				50CC0ED627FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_63.jpg in Resources */,
+				50CC0ED727FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_35.jpg in Resources */,
+				50CC0ED827FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_26.jpg in Resources */,
+				50CC0ED927FE5FAD00DA13CE /* View.xib in Resources */,
+				50CC0EDA27FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_42.jpg in Resources */,
+				50CC0EDB27FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_68.jpg in Resources */,
+				50CC0EDC27FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_41.jpg in Resources */,
+				50CC0EDD27FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_16.jpg in Resources */,
+				50CC0EDE27FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_33.jpg in Resources */,
+				50CC0EDF27FE5FAD00DA13CE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -285,6 +384,30 @@
 				50CC0E3427E3D2C300DA13CE /* PhotoTableViewCell.swift in Sources */,
 				50A2FFB327C018A0006A437C /* TabBar.swift in Sources */,
 				50232A1E27D5718D006A657E /* PostTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50CC0EB527FE5FAD00DA13CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50CC0EB627FE5FAD00DA13CE /* PostViewController.swift in Sources */,
+				50CC0EB727FE5FAD00DA13CE /* ProfileHeaderView.swift in Sources */,
+				50CC0EB827FE5FAD00DA13CE /* MyCollectionViewCell.swift in Sources */,
+				50CC0EB927FE5FAD00DA13CE /* LogInViewController.swift in Sources */,
+				50CC0EBA27FE5FAD00DA13CE /* GestureViewController.swift in Sources */,
+				50CC0EBB27FE5FAD00DA13CE /* ArrayOfPhotos.swift in Sources */,
+				50CC0EBC27FE5FAD00DA13CE /* AppDelegate.swift in Sources */,
+				50CC0EBD27FE5FAD00DA13CE /* InfoViewController.swift in Sources */,
+				50CC0EBE27FE5FAD00DA13CE /* Post.swift in Sources */,
+				50CC0EBF27FE5FAD00DA13CE /* ProfileViewController.swift in Sources */,
+				50CC0EC027FE5FAD00DA13CE /* FeedViewController.swift in Sources */,
+				50CC0EC127FE5FAD00DA13CE /* PhotosViewController.swift in Sources */,
+				50CC0EC227FE5FAD00DA13CE /* ProfileTableHeaderView.swift in Sources */,
+				50CC0EC327FE5FAD00DA13CE /* DetailDescriptionViewController.swift in Sources */,
+				50CC0EC427FE5FAD00DA13CE /* PhotoTableViewCell.swift in Sources */,
+				50CC0EC527FE5FAD00DA13CE /* TabBar.swift in Sources */,
+				50CC0EC627FE5FAD00DA13CE /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +595,60 @@
 			};
 			name = Release;
 		};
+		50CC0EE127FE5FAD00DA13CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7M366N87RZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Navigation1.3 copy-Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "homeqwerty.Navigation1-3";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		50CC0EE227FE5FAD00DA13CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7M366N87RZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Navigation1.3 copy-Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "homeqwerty.Navigation1-3";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -489,6 +666,15 @@
 			buildConfigurations = (
 				50A2FFA827BAE513006A437C /* Debug */,
 				50A2FFA927BAE513006A437C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50CC0EE027FE5FAD00DA13CE /* Build configuration list for PBXNativeTarget "Navigation1.3 copy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50CC0EE127FE5FAD00DA13CE /* Debug */,
+				50CC0EE227FE5FAD00DA13CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
