@@ -41,7 +41,7 @@ class PostTableViewCell: UITableViewCell {
     
     private lazy var descriptionLabel: UILabel = {
         let descriptionLabel = UILabel()
-        descriptionLabel.textColor = .systemGray3
+        descriptionLabel.textColor = .gray
         descriptionLabel.numberOfLines = 0
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         return descriptionLabel

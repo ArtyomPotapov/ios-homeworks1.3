@@ -39,7 +39,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         stackView.clipsToBounds = true
         stackView.alignment = .fill
         stackView.distribution = .fillProportionally
-        stackView.backgroundColor = .systemGray6
+        stackView.backgroundColor = .lightGray
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         return stackView

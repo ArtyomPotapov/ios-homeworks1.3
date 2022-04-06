@@ -71,7 +71,7 @@ class ProfileHeaderView: UIView, UITextFieldDelegate {
     private func setshowStatusButton(){
         showStatusButton.layer.cornerRadius = 14
         showStatusButton.setTitleColor(.white, for: .normal)
-        showStatusButton.setTitleColor(.systemMint, for: .highlighted)
+        showStatusButton.setTitleColor(.green, for: .highlighted)
         showStatusButton.setTitle(buttonTitle, for: .normal)
         showStatusButton.setTitle(buttonTitle, for: .highlighted)
         showStatusButton.layer.shadowOpacity = 1.0

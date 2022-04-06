@@ -50,7 +50,7 @@ class DetailDescriptionViewController: UIViewController {
     
     private lazy var descriptionLabel: UILabel = {
         let descriptionLabel = UILabel()
-        descriptionLabel.textColor = .systemGray3
+        descriptionLabel.textColor = .lightGray
         descriptionLabel.numberOfLines = 0
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         return descriptionLabel

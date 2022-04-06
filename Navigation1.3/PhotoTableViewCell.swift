@@ -47,7 +47,7 @@ class PhotoTableViewCell: UITableViewCell {
 
     private lazy var arrowImageView1: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "arrow.right")
+//        imageView.image = UIImage(systemName: "arrow.right")
         imageView.tintColor = .black
         imageView.setContentHuggingPriority(UILayoutPriority(400), for: .horizontal)
         imageView.translatesAutoresizingMaskIntoConstraints = false

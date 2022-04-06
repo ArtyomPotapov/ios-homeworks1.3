@@ -13,9 +13,9 @@ class TabBar: UITabBarController {
     let logInViewController = LogInViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .clear
         UITabBar.appearance().barTintColor = .white
-        self.tabBar.tintColor = .label
+//        self.tabBar.tintColor = .label
         setNavigationControllers()
         
     }
@@ -23,11 +23,11 @@ class TabBar: UITabBarController {
     func setNavigationControllers(){
         let firstNavigationController = UINavigationController(rootViewController: feedViewController)
         firstNavigationController.tabBarItem.title = "FEED"
-        firstNavigationController.tabBarItem.image = UIImage(systemName: "pencil.circle")!
+//        firstNavigationController.tabBarItem.image = UIImage(systemName: "pencil.circle")!
         
         let secondNavigationController = UINavigationController(rootViewController: logInViewController)    //profileViewController)
         secondNavigationController.tabBarItem.title = "PROFILE"
-        secondNavigationController.tabBarItem.image = UIImage(systemName: "person")!
+//        secondNavigationController.tabBarItem.image = UIImage(systemName: "person")!
         
         
         self.viewControllers = [firstNavigationController, secondNavigationController]

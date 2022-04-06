@@ -35,7 +35,7 @@ class GestureViewController: UIViewController {
     
     private lazy var xCircle: UIImageView = {
         let xCircle = UIImageView()
-        xCircle.image = UIImage(systemName: "x.circle.fill")
+//        xCircle.image = UIImage(systemName: "x.circle.fill")
         xCircle.tintColor = .black
         xCircle.alpha = 0
         xCircle.isUserInteractionEnabled = true
@@ -79,7 +79,7 @@ class GestureViewController: UIViewController {
     }
 
     func setImage(){
-        myImageView.backgroundColor = .systemCyan
+        myImageView.backgroundColor = .green
         myImageView.image = UIImage(named: "musya")
         myImageView.contentMode = .scaleAspectFill
         myImageView.layer.cornerRadius = 60

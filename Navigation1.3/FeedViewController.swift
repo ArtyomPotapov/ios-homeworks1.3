@@ -49,7 +49,7 @@ var titlePost = Post(title: "Переданный текст")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemMint
+        view.backgroundColor = .green
         title = "Лента"
         view.addSubview(myStackView)
         myStackView.addArrangedSubview(firstButton)
