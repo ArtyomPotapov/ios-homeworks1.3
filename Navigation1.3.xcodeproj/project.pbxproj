@@ -605,6 +605,7 @@
 				DEVELOPMENT_TEAM = 7M366N87RZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Navigation1.3 copy-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Copy of target";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -632,6 +633,7 @@
 				DEVELOPMENT_TEAM = 7M366N87RZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Navigation1.3 copy-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Copy of target";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

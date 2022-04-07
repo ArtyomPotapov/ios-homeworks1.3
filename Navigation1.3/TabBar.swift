@@ -13,8 +13,8 @@ class TabBar: UITabBarController {
     let logInViewController = LogInViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .clear
-        UITabBar.appearance().barTintColor = .black
+        view.backgroundColor = .white
+        UITabBar.appearance().barTintColor = .white
 //        self.tabBar.tintColor = .label
         setNavigationControllers()
         
