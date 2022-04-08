@@ -8,8 +8,6 @@
 import UIKit
 
 class PhotoTableViewCell: UITableViewCell {
-
-    
     private lazy var verticalStackView: UIStackView = {
        let stackView = UIStackView()
         stackView.axis = .vertical
@@ -43,7 +41,6 @@ class PhotoTableViewCell: UITableViewCell {
         return photosLabel
     }()
     
-
     private lazy var arrowImageView1: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "arrow.right")
@@ -52,7 +49,6 @@ class PhotoTableViewCell: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
     
     private lazy var myImageView1: UIImageView = {
         let imageView = UIImageView()
@@ -98,7 +94,6 @@ class PhotoTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -108,6 +103,11 @@ class PhotoTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setView()
+        setConstraints()
+    }
+    
+    func setView(){
         contentView.addSubview(verticalStackView)
         verticalStackView.addArrangedSubview(horizontalTopStackView)
         verticalStackView.addArrangedSubview(horizontalStackView)
@@ -117,32 +117,25 @@ class PhotoTableViewCell: UITableViewCell {
         horizontalStackView.addArrangedSubview(myImageView2)
         horizontalStackView.addArrangedSubview(myImageView3)
         horizontalStackView.addArrangedSubview(myImageView4)
-        setConstraints()
     }
     
-    
     func setConstraints(){
-        let topStackView = verticalStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12)
-        let bottomStackView = verticalStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12)
-        let leadStackView = verticalStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12)
-        let trailStackView = verticalStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12)
         
-        let myImageView1Width = myImageView1.widthAnchor.constraint(equalToConstant: (self.contentView.frame.width / 4 - 48))
-        let myImageView1Heigth = myImageView1.heightAnchor.constraint(equalToConstant: 60)
-        
-        let myImageView2Width = myImageView2.widthAnchor.constraint(equalToConstant: (self.contentView.frame.width / 4 - 48))
-        let myImageView2Heigth = myImageView2.heightAnchor.constraint(equalToConstant: 60)
-        
-        let myImageView3Width = myImageView3.widthAnchor.constraint(equalToConstant: (self.contentView.frame.width / 4 - 48))
-        let myImageView3Heigth = myImageView3.heightAnchor.constraint(equalToConstant: 60)
-        
-        let myImageView4Width = myImageView4.widthAnchor.constraint(equalToConstant: (self.contentView.frame.width / 4 - 48))
-        let myImageView4Heigth = myImageView4.heightAnchor.constraint(equalToConstant: 60)
-        
-        let arrowImageView1width = arrowImageView1.widthAnchor.constraint(equalToConstant: 30)
-        
-        NSLayoutConstraint.activate([topStackView, bottomStackView, trailStackView, leadStackView, myImageView1Width, myImageView2Width, myImageView3Width, myImageView4Width, myImageView1Heigth, myImageView2Heigth, myImageView3Heigth, myImageView4Heigth, arrowImageView1width
-                                    ])
+        NSLayoutConstraint.activate([
+            verticalStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
+            verticalStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
+            verticalStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
+            verticalStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
+            myImageView1.widthAnchor.constraint(equalToConstant: (self.contentView.frame.width / 4 - 48)),
+            myImageView1.heightAnchor.constraint(equalToConstant: 60),
+            myImageView2.widthAnchor.constraint(equalToConstant: (self.contentView.frame.width / 4 - 48)),
+            myImageView2.heightAnchor.constraint(equalToConstant: 60),
+            myImageView3.widthAnchor.constraint(equalToConstant: (self.contentView.frame.width / 4 - 48)),
+            myImageView3.heightAnchor.constraint(equalToConstant: 60),
+            myImageView4.widthAnchor.constraint(equalToConstant: (self.contentView.frame.width / 4 - 48)),
+            myImageView4.heightAnchor.constraint(equalToConstant: 60),
+            arrowImageView1.widthAnchor.constraint(equalToConstant: 30)
+        ])
     }
     
     required init?(coder: NSCoder) {

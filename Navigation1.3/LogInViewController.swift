@@ -41,7 +41,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         stackView.distribution = .fillProportionally
         stackView.backgroundColor = .systemGray6
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        
         return stackView
     }()
     
@@ -157,6 +156,13 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isToolbarHidden = true
+        setView()
+        addConstr()
+        emailField.delegate = self
+        passwordField.delegate = self
+            }
+    
+    func setView(){
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubview(imageView)
@@ -168,68 +174,51 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         fieldUnderEmail.addSubview(emailField)
         fieldUnderPassword.addSubview(passwordField)
         contentView.addSubview(errorLabel)
-        addConstr()
-        emailField.delegate = self
-        passwordField.delegate = self
-            }
+    }
     
     func addConstr(){
-        let scrollTop = scrollView.topAnchor.constraint(equalTo: view.topAnchor)
-        let scrollBottom = scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        let scrollLeft = scrollView.leftAnchor.constraint(equalTo: view.leftAnchor)
-        let scrollRight = scrollView.rightAnchor.constraint(equalTo: view.rightAnchor)
-        
-        let contentTop = contentView.topAnchor.constraint(equalTo: scrollView.topAnchor)
-        contentTop.identifier = "AaaaAAAAA"
-        let contentBottom = contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
-        let contentXCenter = contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor)
-        let contentYCenter = contentView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor)
-        let contentLeft = contentView.leftAnchor.constraint(equalTo: scrollView.leftAnchor)
-        let contentRight = contentView.rightAnchor.constraint(equalTo: scrollView.rightAnchor)
-        
-        let imageHeight = imageView.heightAnchor.constraint(equalToConstant: 100)
-        let imageWidth = imageView.widthAnchor.constraint(equalToConstant: 100)
-        let imageCenter = imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
-        let imageTop = imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 120)
-    
-        let stackHeight = stackView.heightAnchor.constraint(equalToConstant: 100)
-        let stackTop = stackView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 120)
-        let stackLeading = stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16)
-        let stackTrailing = stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
-        
-        let separatorHeight = separator.heightAnchor.constraint(equalToConstant: 0.5)
-        let separatorTra = separator.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: 0)
-        let separatorLeading = separator.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 0)
-
-        let fieldUnderEmailLeading = fieldUnderEmail.leftAnchor.constraint(equalTo: stackView.leftAnchor)
-        let fieldUnderEmailTrailing = fieldUnderEmail.rightAnchor.constraint(equalTo: stackView.rightAnchor)
-        let fieldUnderEmailTop = fieldUnderEmail.topAnchor.constraint(equalTo: stackView.topAnchor)
-        let fieldUnderEmailHeight = fieldUnderEmail.heightAnchor.constraint(equalTo: emailField.heightAnchor)
-        
-        let fieldUnderPasswordLeading = fieldUnderPassword.leftAnchor.constraint(equalTo: stackView.leftAnchor)
-        let fieldUnderPasswordTrailing = fieldUnderPassword.rightAnchor.constraint(equalTo: stackView.rightAnchor)
-        let fieldUnderPasswordBottom = fieldUnderPassword.bottomAnchor.constraint(equalTo: stackView.bottomAnchor)
-        let fieldUnderPasswordHeight = fieldUnderPassword.heightAnchor.constraint(equalTo: passwordField.heightAnchor)
-
-        
-        let emailLeading = emailField.leftAnchor.constraint(equalTo: fieldUnderEmail.leftAnchor, constant: 10)
-        let emailTrailing = emailField.rightAnchor.constraint(equalTo: fieldUnderEmail.rightAnchor, constant: -10)
-        
-        let passwordLeading = passwordField.leftAnchor.constraint(equalTo: fieldUnderPassword.leftAnchor, constant: 10)
-        let passwordTrailing = passwordField.rightAnchor.constraint(equalTo: fieldUnderPassword.rightAnchor, constant: -10)
-
-        let buttonTop = button.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 16)
-        let buttonLeading = button.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16)
-        let buttonTrailing = button.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16)
-        let buttonHeight = button.heightAnchor.constraint(equalToConstant: 50)
-        
-        
-        let errorLabelBotton = errorLabel.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -16)
-        let errorLabelLeading = errorLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16)
-        let errorLabelTrailing = errorLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16)
-//        let buttonHeight = button.heightAnchor.constraint(equalToConstant: 50)
-        
-        NSLayoutConstraint.activate([scrollTop, scrollLeft, scrollRight, scrollBottom, contentTop,  contentBottom,  contentXCenter, contentYCenter, contentLeft, contentRight, imageHeight, imageWidth, imageCenter, imageTop, stackHeight, stackTop, stackLeading, stackTrailing, separatorHeight, emailLeading,  emailTrailing, separatorTra, separatorLeading, buttonTop, buttonLeading, buttonTrailing, buttonHeight, fieldUnderEmailLeading, fieldUnderEmailTrailing, fieldUnderEmailTop, fieldUnderEmailHeight, fieldUnderPasswordLeading, fieldUnderPasswordTrailing, fieldUnderPasswordBottom,  fieldUnderPasswordHeight, passwordLeading, passwordTrailing, errorLabelBotton, errorLabelLeading, errorLabelTrailing])
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            scrollView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            scrollView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            contentView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor),
+            contentView.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
+            contentView.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
+            imageView.heightAnchor.constraint(equalToConstant: 100),
+            imageView.widthAnchor.constraint(equalToConstant: 100),
+            imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 120),
+            stackView.heightAnchor.constraint(equalToConstant: 100),
+            stackView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 120),
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            separator.heightAnchor.constraint(equalToConstant: 0.5),
+            separator.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: 0),
+            separator.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 0),
+            fieldUnderEmail.leftAnchor.constraint(equalTo: stackView.leftAnchor),
+            fieldUnderEmail.rightAnchor.constraint(equalTo: stackView.rightAnchor),
+            fieldUnderEmail.topAnchor.constraint(equalTo: stackView.topAnchor),
+            fieldUnderEmail.heightAnchor.constraint(equalTo: emailField.heightAnchor),
+            fieldUnderPassword.leftAnchor.constraint(equalTo: stackView.leftAnchor),
+            fieldUnderPassword.rightAnchor.constraint(equalTo: stackView.rightAnchor),
+            fieldUnderPassword.bottomAnchor.constraint(equalTo: stackView.bottomAnchor),
+            fieldUnderPassword.heightAnchor.constraint(equalTo: passwordField.heightAnchor),
+            emailField.leftAnchor.constraint(equalTo: fieldUnderEmail.leftAnchor, constant: 10),
+            emailField.rightAnchor.constraint(equalTo: fieldUnderEmail.rightAnchor, constant: -10),
+            passwordField.leftAnchor.constraint(equalTo: fieldUnderPassword.leftAnchor, constant: 10),
+            passwordField.rightAnchor.constraint(equalTo: fieldUnderPassword.rightAnchor, constant: -10),
+            button.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 16),
+            button.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16),
+            button.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16),
+            button.heightAnchor.constraint(equalToConstant: 50),
+            errorLabel.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -16),
+            errorLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16),
+            errorLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16)
+        ])
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

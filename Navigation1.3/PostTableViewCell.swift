@@ -14,6 +14,8 @@ class PostTableViewCell: UITableViewCell {
     
     let tapLikes = UITapGestureRecognizer()
     var delegate: AddLikesDelegate?
+    
+
 
     private lazy var bottomStackView: UIStackView = {
        let buttomStackView = UIStackView()
@@ -78,6 +80,13 @@ class PostTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setView()
+        addMyConstraints()
+        likesLabel.addGestureRecognizer(tapLikes)
+        tapLikes.addTarget(self, action: #selector(addLikes))
+    }
+    
+    func setView(){
         contentView.addSubview(stackView)
         stackView.addArrangedSubview(authorLabel)
         stackView.addArrangedSubview(myImageView)
@@ -85,11 +94,6 @@ class PostTableViewCell: UITableViewCell {
         stackView.addArrangedSubview(bottomStackView)
         bottomStackView.addArrangedSubview(viewsLabel)
         bottomStackView.addArrangedSubview(likesLabel)
-        addMyConstraints()
-        likesLabel.addGestureRecognizer(tapLikes)
-        tapLikes.addTarget(self, action: #selector(addLikes))
-
-        
     }
     
     required init?(coder: NSCoder) {
@@ -98,20 +102,20 @@ class PostTableViewCell: UITableViewCell {
     
     func addMyConstraints(){
         let window = UIWindow(frame: UIScreen.main.bounds)
-//        let stackTop = stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16)
-        let stackLead = stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
-        let stackBottom = stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-        let stackTrail = stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
-        let imageWidth = myImageView.widthAnchor.constraint(equalToConstant: window.frame.width)
-        let imageHeight = myImageView.heightAnchor.constraint(lessThanOrEqualToConstant: window.frame.width)
-        let authorLeding = authorLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16)
-        let imageLeading = myImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
-        let imageTrailing = myImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
-        let authorTrailing = authorLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
-        let likesWidth = likesLabel.widthAnchor.constraint(equalToConstant: 80)
-        let bottomStack = stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
-
-        NSLayoutConstraint.activate([stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16), stackLead, stackTrail, stackBottom, imageWidth, imageHeight, authorLeding, imageLeading, likesWidth, imageTrailing, authorTrailing, bottomStack])
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            myImageView.widthAnchor.constraint(equalToConstant: window.frame.width),
+            myImageView.heightAnchor.constraint(lessThanOrEqualToConstant: window.frame.width),
+            authorLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            myImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            myImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            authorLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            likesLabel.widthAnchor.constraint(equalToConstant: 80),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
+            ])
     }
     
     func setup(post: PostModel){

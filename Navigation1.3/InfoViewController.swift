@@ -28,12 +28,9 @@ class InfoViewController: UIViewController {
 
     @objc func alertContr(){
         let ac = UIAlertController(title: "Поздравляем!", message: "Вы опубликовали пост", preferredStyle: .actionSheet)
-//        ac.view.backgroundColor = .systemGreen
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         ac.addAction(action)
         
         present(ac, animated: false, completion: nil)
     }
-
-
 }

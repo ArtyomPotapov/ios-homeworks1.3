@@ -43,39 +43,43 @@ class GestureViewController: UIViewController {
         return xCircle
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemYellow
-        
-        view.addSubview(myImageView)
-        view.addSubview(fonView)
-        view.addSubview(xCircle)
-        view.bringSubviewToFront(xCircle)
-        view.bringSubviewToFront(myImageView)
+        setView()
         activateConstraints()
         setImage()
         setGesture()
     }
     
+    func setView(){
+        view.backgroundColor = .systemYellow
+        view.addSubview(myImageView)
+        view.addSubview(fonView)
+        view.addSubview(xCircle)
+        view.bringSubviewToFront(xCircle)
+        view.bringSubviewToFront(myImageView)
+    }
+
+    
     func activateConstraints(){
-        let fonTop = fonView.topAnchor.constraint(equalTo: view.topAnchor)
-        let fonBottom = fonView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        let fonTrail = fonView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        let fonLeading = fonView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
-        
-        
-        let xCircleTop = xCircle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,  constant: 1)
-        let xCircleTrail = xCircle.trailingAnchor.constraint(equalTo: view.trailingAnchor,  constant: -5)
-        let xCircleWidth = xCircle.widthAnchor.constraint(equalToConstant: 35)
-        let xCircleHeight = xCircle.heightAnchor.constraint(equalToConstant: 35)
-        
         topConstraint = myImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 70)
         leadingConstraint = myImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
         heightViewConstraint =  myImageView.heightAnchor.constraint(equalToConstant: 120)
         widthViewConstraint =  myImageView.widthAnchor.constraint(equalToConstant: 120)
         
-        NSLayoutConstraint.activate([topConstraint, leadingConstraint, heightViewConstraint, widthViewConstraint, fonTop, fonBottom, fonTrail, fonLeading, xCircleTop, xCircleTrail, xCircleWidth, xCircleHeight].compactMap({$0}))
+        NSLayoutConstraint.activate([topConstraint,
+                                     leadingConstraint,
+                                     heightViewConstraint,
+                                     widthViewConstraint,
+                                     fonView.topAnchor.constraint(equalTo: view.topAnchor),
+                                     fonView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                                     fonView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                                     fonView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                                     xCircle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,  constant: 1),
+                                     xCircle.trailingAnchor.constraint(equalTo: view.trailingAnchor,  constant: -5),
+                                     xCircle.widthAnchor.constraint(equalToConstant: 35),
+                                     xCircle.heightAnchor.constraint(equalToConstant: 35)
+                                    ].compactMap({$0}))
     }
 
     func setImage(){
@@ -90,7 +94,6 @@ class GestureViewController: UIViewController {
     
     func setGesture(){
         tapGestureRecognizer.addTarget(self, action: #selector(handleTapGesture(_:)))
-        
         myImageView.addGestureRecognizer(tapGestureRecognizer)
         
     }
@@ -115,10 +118,7 @@ class GestureViewController: UIViewController {
             self.fonView.alpha = self.isExpanded ? 1 : 0
             self.xCircle.alpha = self.isExpanded ? 1 : 0
             self.view.layoutIfNeeded()
-        } completion: { _ in
-
-        }
-        
+        } 
     }
     
 }
