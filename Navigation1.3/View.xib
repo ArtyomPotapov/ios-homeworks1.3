@@ -37,7 +37,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rQ1-yf-hJ8">
-                    <rect key="frame" x="156" y="201" width="224" height="40"/>
+                    <rect key="frame" x="156" y="150" width="224" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="2Np-uq-0bz"/>
                     </constraints>
@@ -54,7 +54,7 @@
                     <buttonConfiguration key="configuration" style="plain"/>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="status" placeholder="Waiting for something..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o7I-S8-l9N">
-                    <rect key="frame" x="156" y="143.5" width="154" height="18.5"/>
+                    <rect key="frame" x="156" y="108" width="154" height="18.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -71,14 +71,14 @@
                 <constraint firstItem="em5-kJ-dfi" firstAttribute="top" relation="greaterThanOrEqual" secondItem="o7I-S8-l9N" secondAttribute="bottom" constant="34" id="Jqe-RC-suY"/>
                 <constraint firstItem="rQ1-yf-hJ8" firstAttribute="leading" secondItem="1Ph-AL-aPK" secondAttribute="trailing" constant="20" id="STE-fj-Dga"/>
                 <constraint firstItem="cdf-mI-WuM" firstAttribute="trailing" secondItem="em5-kJ-dfi" secondAttribute="trailing" constant="16" id="TXL-Hj-Kdr"/>
-                <constraint firstItem="rQ1-yf-hJ8" firstAttribute="top" secondItem="1Ph-AL-aPK" secondAttribute="bottom" constant="21" id="VXs-UO-cZH"/>
+                <constraint firstItem="rQ1-yf-hJ8" firstAttribute="top" secondItem="1Ph-AL-aPK" secondAttribute="bottom" constant="-30" id="VXs-UO-cZH"/>
                 <constraint firstItem="em5-kJ-dfi" firstAttribute="leading" secondItem="cdf-mI-WuM" secondAttribute="leading" constant="16" id="cfT-5f-UjW"/>
                 <constraint firstItem="1Ph-AL-aPK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="dJn-d9-Ogh"/>
                 <constraint firstItem="cdf-mI-WuM" firstAttribute="trailing" secondItem="rQ1-yf-hJ8" secondAttribute="trailing" constant="20" id="fW0-gN-d0R"/>
                 <constraint firstItem="em5-kJ-dfi" firstAttribute="top" secondItem="1Ph-AL-aPK" secondAttribute="bottom" constant="16" id="fjG-LI-Iuj"/>
                 <constraint firstItem="Fae-6g-q0t" firstAttribute="leading" secondItem="1Ph-AL-aPK" secondAttribute="trailing" constant="20" id="i2L-gk-Y7g"/>
                 <constraint firstItem="1Ph-AL-aPK" firstAttribute="leading" secondItem="cdf-mI-WuM" secondAttribute="leading" constant="16" id="vdN-yV-diM"/>
-                <constraint firstItem="o7I-S8-l9N" firstAttribute="top" secondItem="Fae-6g-q0t" secondAttribute="bottom" constant="51.5" id="xdh-pg-3mO"/>
+                <constraint firstItem="o7I-S8-l9N" firstAttribute="top" secondItem="Fae-6g-q0t" secondAttribute="bottom" constant="16" id="xdh-pg-3mO"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="137.68115942028987" y="81.696428571428569"/>
