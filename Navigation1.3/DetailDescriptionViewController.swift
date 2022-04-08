@@ -43,8 +43,10 @@ class DetailDescriptionViewController: UIViewController {
     private lazy var authorLabel: UILabel = {
         let authorLabel = UILabel()
         authorLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 20)
-        authorLabel.numberOfLines = 2
+        authorLabel.numberOfLines = 0
         authorLabel.translatesAutoresizingMaskIntoConstraints = false
+        authorLabel.setContentHuggingPriority(.defaultLow, for: .vertical)
+
         return authorLabel
     }()
     
@@ -114,7 +116,7 @@ class DetailDescriptionViewController: UIViewController {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         
-        let stackTop = stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16)
+        let stackTop = stackView.topAnchor.constraint(equalTo: contentView.topAnchor)
         let stackLead = stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
         let stackBottom = stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         let stackTrail = stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
@@ -125,18 +127,19 @@ class DetailDescriptionViewController: UIViewController {
         
         let authorLeading = authorLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16)
         let authorTrailing = authorLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
+        let authorTop = authorLabel.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 1)
 
         let imageLeading = myImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
         let imageTrailing = myImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         
-        NSLayoutConstraint.activate([ scrollTop, scrollBottom, scrollLeft,scrollRight, contentTop, contentBottom, contentXCenter, contentYCenter, contentLeft, contentRight, stackTop, stackLead, stackTrail, stackBottom, imageWidth, imageHeight, authorLeading, imageLeading, imageTrailing, authorTrailing])
+        NSLayoutConstraint.activate([ scrollTop, scrollBottom, scrollLeft,scrollRight, contentTop, contentBottom, contentXCenter, contentYCenter, contentLeft, contentRight, stackTop, stackLead, stackTrail, stackBottom, imageWidth, imageHeight, authorLeading, imageLeading, imageTrailing, authorTrailing, authorTop])
     }
    
     
     func setup(post: PostModel){
         self.authorLabel.text = post.author
-        self.viewsLabel.text = "Views: " + String(post.views)
-        self.likesLabel.text = "Likes: " + String(post.likes)
+        self.viewsLabel.text = "Views: \(post.views)"
+        self.likesLabel.text = "Likes: \(post.likes)"
         self.descriptionLabel.text = post.description
         self.myImageView.image = UIImage(named: "\(post.image)")
         

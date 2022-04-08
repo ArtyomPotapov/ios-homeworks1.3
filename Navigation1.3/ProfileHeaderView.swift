@@ -64,7 +64,6 @@ class ProfileHeaderView: UIView, UITextFieldDelegate {
     @objc func handleTap(_ tapGR:UITapGestureRecognizer){
         guard tapGestureRecognizer === tapGR else { return }
         self.delegate2?.qwe()
-        print("0000000")
 
     }
     

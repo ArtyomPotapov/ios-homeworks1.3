@@ -9,7 +9,7 @@ import UIKit
 
 class PhotosViewController: UIViewController {
     
-    var reccc: CGRect?
+    var rectOfCell: CGRect?
     var topColl: NSLayoutConstraint?
     var leadingColl: NSLayoutConstraint?
     var widthColl: NSLayoutConstraint?
@@ -98,17 +98,16 @@ class PhotosViewController: UIViewController {
 
     @objc func handleTapGesture(_ tapGR:UITapGestureRecognizer){
         guard tapGestureRecognizer === tapGR else { return }
-        guard let rrreccc = self.reccc else {return}
-        print("1212121212121212")
+        guard let tempRectOfCell = self.rectOfCell else {return}
         if isExpanded {
             isExpanded = false
             UIView.animate(withDuration: 0.1){
                 self.fonView.alpha = 0
                 self.bigImageView.alpha = 0
-                self.topColl?.constant = rrreccc.origin.y
-                self.leadingColl?.constant = rrreccc.origin.x
-                self.widthColl?.constant = rrreccc.width
-                self.heightColl?.constant = rrreccc.height
+                self.topColl?.constant = tempRectOfCell.origin.y
+                self.leadingColl?.constant = tempRectOfCell.origin.x
+                self.widthColl?.constant = tempRectOfCell.width
+                self.heightColl?.constant = tempRectOfCell.height
                 self.view.layoutIfNeeded()
             }
         }
@@ -137,8 +136,7 @@ extension PhotosViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
         guard let frameCell = cell?.frame else { return  }
-        print(frameCell)
-        reccc = frameCell
+        rectOfCell = frameCell
         setBigImageView(indexPath: indexPath)
         addConstrBig()
     }
@@ -149,11 +147,11 @@ extension PhotosViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func addConstrBig(){
-        guard let rrreccc = reccc else {return}
-        topColl?.constant = rrreccc.origin.y
-        leadingColl?.constant = rrreccc.origin.x
-        widthColl?.constant = rrreccc.width
-        heightColl?.constant = rrreccc.height
+        guard let rectCell = rectOfCell else {return}
+        topColl?.constant = rectCell.origin.y
+        leadingColl?.constant = rectCell.origin.x
+        widthColl?.constant = rectCell.width
+        heightColl?.constant = rectCell.height
         self.view.layoutIfNeeded()
         self.isExpanded = true
         UIView.animate(withDuration: 0.2) {
