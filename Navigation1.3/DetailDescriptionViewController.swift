@@ -43,7 +43,7 @@ class DetailDescriptionViewController: UIViewController {
     private lazy var authorLabel: UILabel = {
         let authorLabel = UILabel()
         authorLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 20)
-        authorLabel.numberOfLines = 0
+//        authorLabel.numberOfLines = 1
         authorLabel.translatesAutoresizingMaskIntoConstraints = false
         authorLabel.setContentHuggingPriority(.defaultLow, for: .vertical)
 
@@ -127,12 +127,13 @@ class DetailDescriptionViewController: UIViewController {
         
         let authorLeading = authorLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16)
         let authorTrailing = authorLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
-        let authorTop = authorLabel.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 1)
+        let authorTop = authorLabel.topAnchor.constraint(equalTo: stackView.topAnchor)
+        let authorHeight = authorLabel.heightAnchor.constraint(equalToConstant: 35)
 
         let imageLeading = myImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
         let imageTrailing = myImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         
-        NSLayoutConstraint.activate([ scrollTop, scrollBottom, scrollLeft,scrollRight, contentTop, contentBottom, contentXCenter, contentYCenter, contentLeft, contentRight, stackTop, stackLead, stackTrail, stackBottom, imageWidth, imageHeight, authorLeading, imageLeading, imageTrailing, authorTrailing, authorTop])
+        NSLayoutConstraint.activate([ scrollTop, scrollBottom, scrollLeft,scrollRight, contentTop, contentBottom, contentXCenter, contentYCenter, contentLeft, contentRight, stackTop, stackLead, stackTrail, stackBottom, imageWidth, imageHeight, authorLeading, imageLeading, imageTrailing, authorTrailing, authorTop, authorHeight])
     }
    
     
