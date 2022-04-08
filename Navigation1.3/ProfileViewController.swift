@@ -244,7 +244,6 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
 extension ProfileViewController: Qwe {
     
         func qwe(){
-            print("1234567890")
             self.isExpanded.toggle()
             self.widthViewConstraint?.constant = self.isExpanded ? self.view.frame.width : 120
             self.heightViewConstraint?.constant = self.isExpanded ? self.view.frame.width : 120

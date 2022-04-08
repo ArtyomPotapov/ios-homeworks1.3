@@ -25,7 +25,7 @@ class TabBar: UITabBarController {
         firstNavigationController.tabBarItem.title = "FEED"
         firstNavigationController.tabBarItem.image = UIImage(systemName: "pencil.circle")!
         
-        let secondNavigationController = UINavigationController(rootViewController: logInViewController)    //profileViewController)
+        let secondNavigationController = UINavigationController(rootViewController: profileViewController)//logInViewController)    //profileViewController)
         secondNavigationController.tabBarItem.title = "PROFILE"
         secondNavigationController.tabBarItem.image = UIImage(systemName: "person")!
         

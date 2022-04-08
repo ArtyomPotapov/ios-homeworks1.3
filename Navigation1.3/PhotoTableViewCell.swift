@@ -9,7 +9,6 @@ import UIKit
 
 class PhotoTableViewCell: UITableViewCell {
 
-//    var photos = [String]()
     
     private lazy var verticalStackView: UIStackView = {
        let stackView = UIStackView()
@@ -109,7 +108,6 @@ class PhotoTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        addPhotos()
         contentView.addSubview(verticalStackView)
         verticalStackView.addArrangedSubview(horizontalTopStackView)
         verticalStackView.addArrangedSubview(horizontalStackView)
@@ -122,16 +120,6 @@ class PhotoTableViewCell: UITableViewCell {
         setConstraints()
     }
     
-    func addPhotos(){
-        let fileManager = FileManager.default
-        let path = Bundle.main.resourcePath!
-        let items = try! fileManager.contentsOfDirectory(atPath: path)
-        for item in items {
-            if item.hasPrefix("prikolnye_fotografii_kotov_141_foto_") {
-                photos.append(item)
-            }
-        }
-    }
     
     func setConstraints(){
         let topStackView = verticalStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12)

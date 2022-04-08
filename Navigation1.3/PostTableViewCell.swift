@@ -98,7 +98,7 @@ class PostTableViewCell: UITableViewCell {
     
     func addMyConstraints(){
         let window = UIWindow(frame: UIScreen.main.bounds)
-        let stackTop = stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16)
+//        let stackTop = stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16)
         let stackLead = stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
         let stackBottom = stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         let stackTrail = stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
