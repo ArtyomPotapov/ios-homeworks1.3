@@ -51,19 +51,23 @@ var titlePost = Post(title: "Переданный текст")
         super.viewDidLoad()
         view.backgroundColor = .systemMint
         title = "Лента"
+        setView()
+        setAllConstraints()
+    }
+    func setView(){
         view.addSubview(myStackView)
         myStackView.addArrangedSubview(firstButton)
         myStackView.addArrangedSubview(secondButton)
-        setAllConstraints()
     }
     
     func setAllConstraints(){
-        let stackCenterX = myStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        let stackCenterY = myStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        let firstButtonHeight = firstButton.heightAnchor.constraint(equalToConstant: 50)
-        let secondButtonWidth = secondButton.widthAnchor.constraint(equalToConstant: 220)
 
-        NSLayoutConstraint.activate([stackCenterX, stackCenterY, firstButtonHeight,secondButtonWidth ])
+        NSLayoutConstraint.activate([
+            myStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            myStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            firstButton.heightAnchor.constraint(equalToConstant: 50),
+            secondButton.widthAnchor.constraint(equalToConstant: 220)
+        ])
     }
     
     @objc func prepareToPost(){

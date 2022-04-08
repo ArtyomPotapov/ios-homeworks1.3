@@ -28,14 +28,13 @@ class MyCollectionViewCell: UICollectionViewCell {
     }
     
     func addConst(){
-        let cenrX = myImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
-        let cenrY = myImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
-        let topImageView = myImageView.topAnchor.constraint(equalTo: contentView.topAnchor)
-        let bottomImageView = myImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-        let leftImageView = myImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
-        let trailImageView = myImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
-
-        NSLayoutConstraint.activate([cenrX, cenrY, topImageView, bottomImageView, leftImageView, trailImageView ])
+        NSLayoutConstraint.activate([
+            myImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            myImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            myImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            myImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            myImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            myImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)])
     }
     
     func setImage(name: String){

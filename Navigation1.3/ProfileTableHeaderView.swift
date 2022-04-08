@@ -6,15 +6,14 @@
 //
 
 import UIKit
-protocol QwePTHV: AnyObject {
+protocol Expandable: AnyObject {
     func qwe()
 }
 
-class ProfileTableHeaderView: UIView, QwePTHV {
+class ProfileTableHeaderView: UIView, Expandable {
     func qwe() {
         delegatePVC?.qwe()
     }
-    
     
     var delegate: ProfileViewController?
     var delegatePVC: Qwe?
@@ -43,11 +42,13 @@ class ProfileTableHeaderView: UIView, QwePTHV {
     }()
     
     func activateConstraints(){
-        let topConstraint = profileHeaderView.topAnchor.constraint(equalTo: self.topAnchor)
-        let leadingConstraint = profileHeaderView.leadingAnchor.constraint(equalTo: self.leadingAnchor)
-        let trailConstraint = profileHeaderView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         heightViewConstraint =  profileHeaderView.heightAnchor.constraint(equalToConstant: 220)
-        NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailConstraint, heightViewConstraint].compactMap({$0}))
+        NSLayoutConstraint.activate([
+            profileHeaderView.topAnchor.constraint(equalTo: self.topAnchor),
+            profileHeaderView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            profileHeaderView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            heightViewConstraint
+        ].compactMap({$0}))
     }
 }
 

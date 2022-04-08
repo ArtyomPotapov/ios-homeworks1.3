@@ -79,21 +79,23 @@ class ProfileViewController: UIViewController, AddLikesDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Профиль"
-        view.addSubview(tableView)
         posts = postsAll
-        
+        setView()
+        setImage()
+        addConstraint()
+        setGesture()
+    }
+   
+    func setView(){
+        view.addSubview(tableView)
         view.addSubview(myImageView)
         view.addSubview(fonView)
         view.addSubview(xCircle)
         view.bringSubviewToFront(fonView)
         view.bringSubviewToFront(xCircle)
         view.bringSubviewToFront(myImageView)
-        setImage()
-        addConstraint()
-        
-        setGesture()
     }
-   
+    
     func setImage(){
         myImageView.alpha = 0
         myImageView.image = UIImage(named: "musya")
@@ -105,7 +107,6 @@ class ProfileViewController: UIViewController, AddLikesDelegate {
     }
     
     func addConstraint(){
-        
         topConstraint = myImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16)
         leadingConstraint = myImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
         heightViewConstraint =  myImageView.heightAnchor.constraint(equalToConstant: 120)
@@ -267,5 +268,4 @@ extension ProfileViewController: Qwe {
 
             }
         }
-    
 }

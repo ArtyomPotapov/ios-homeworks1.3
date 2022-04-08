@@ -56,39 +56,40 @@ class PhotosViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Photo Gallery"
+        setView()
+        addConstr()
+        setGesture()
+    }
+    
+    func setView(){
         view.addSubview(myCollectionView)
         view.addSubview(bigImageView)
         view.addSubview(fonView)
         view.bringSubviewToFront(fonView)
         view.bringSubviewToFront(bigImageView)
-        addConstr()
-        setGesture()
     }
     
     func addConstr(){
-        let myCollectionViewtopColl = myCollectionView.topAnchor.constraint(equalTo: view.topAnchor)
-        let myCollectionViewbottomColl = myCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        let myCollectionViewleadingColl = myCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
-        let myCollectionViewtrailColl = myCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        
-        let fonViewtopColl = fonView.topAnchor.constraint(equalTo: view.topAnchor)
-        let fonViewbottomColl = fonView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        let fonViewleadingColl = fonView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
-        let fonViewtrailColl = fonView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        
         topColl = bigImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10)
         topColl?.identifier = "topColl"
-        
         leadingColl = bigImageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10)
         leadingColl?.identifier = "leadingColl"
-        
         widthColl = bigImageView.widthAnchor.constraint(equalToConstant: 10)
         widthColl?.identifier = "widthColl"
-        
         heightColl = bigImageView.heightAnchor.constraint(equalToConstant: 10)
         heightColl?.identifier = "heightColl"        
         
-        NSLayoutConstraint.activate([myCollectionViewtopColl, myCollectionViewbottomColl, myCollectionViewtrailColl, myCollectionViewleadingColl, topColl, leadingColl, widthColl, heightColl, fonViewtopColl, fonViewtrailColl, fonViewbottomColl, fonViewleadingColl].compactMap({$0}))
+        NSLayoutConstraint.activate([
+            myCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            myCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            myCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            myCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            fonView.topAnchor.constraint(equalTo: view.topAnchor),
+            fonView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            fonView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            fonView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            topColl, leadingColl, widthColl, heightColl
+        ].compactMap({$0}))
     }
     
     func setGesture(){

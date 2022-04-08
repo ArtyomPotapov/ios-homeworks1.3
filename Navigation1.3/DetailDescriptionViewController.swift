@@ -11,6 +11,7 @@ class DetailDescriptionViewController: UIViewController {
     
     var numberRow: Int?
     var posts = [PostModel]()
+    let window = UIWindow(frame: UIScreen.main.bounds)
 
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -43,10 +44,8 @@ class DetailDescriptionViewController: UIViewController {
     private lazy var authorLabel: UILabel = {
         let authorLabel = UILabel()
         authorLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 20)
-//        authorLabel.numberOfLines = 1
         authorLabel.translatesAutoresizingMaskIntoConstraints = false
         authorLabel.setContentHuggingPriority(.defaultLow, for: .vertical)
-
         return authorLabel
     }()
     
@@ -67,7 +66,6 @@ class DetailDescriptionViewController: UIViewController {
     private lazy var likesLabel: UILabel = {
         let likesLabel = UILabel()
         likesLabel.isUserInteractionEnabled = true
-
         likesLabel.translatesAutoresizingMaskIntoConstraints = false
         return likesLabel
     }()
@@ -82,8 +80,15 @@ class DetailDescriptionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Детальное описание поста"
-        
         view.backgroundColor = .white
+        setView()
+        addMyConstraints()
+        guard let numberRow = numberRow else {return}
+        setup(post: posts[numberRow])
+        
+    }
+    
+    func setView(){
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubview(stackView)
@@ -93,56 +98,40 @@ class DetailDescriptionViewController: UIViewController {
         stackView.addArrangedSubview(bottomStackView)
         bottomStackView.addArrangedSubview(viewsLabel)
         bottomStackView.addArrangedSubview(likesLabel)
-        addMyConstraints()
-        guard let numberRow = numberRow else {return}
-        setup(post: posts[numberRow])
-        
     }
-    
     
     func addMyConstraints(){
-        
-        let scrollTop = scrollView.topAnchor.constraint(equalTo: view.topAnchor)
-        let scrollBottom = scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        let scrollLeft = scrollView.leftAnchor.constraint(equalTo: view.leftAnchor)
-        let scrollRight = scrollView.rightAnchor.constraint(equalTo: view.rightAnchor)
-        
-        let contentTop = contentView.topAnchor.constraint(equalTo: scrollView.topAnchor)
-        let contentBottom = contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
-        let contentXCenter = contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor)
-        let contentYCenter = contentView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor)
-        let contentLeft = contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor)
-        let contentRight = contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor)
-        
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        
-        let stackTop = stackView.topAnchor.constraint(equalTo: contentView.topAnchor)
-        let stackLead = stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
-        let stackBottom = stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-        let stackTrail = stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
-        
-        
-        let imageWidth = myImageView.widthAnchor.constraint(equalToConstant: window.frame.width)
-        let imageHeight = myImageView.heightAnchor.constraint(equalToConstant: window.frame.width)
-        
-        let authorLeading = authorLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16)
-        let authorTrailing = authorLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
-        let authorTop = authorLabel.topAnchor.constraint(equalTo: stackView.topAnchor)
-        let authorHeight = authorLabel.heightAnchor.constraint(equalToConstant: 35)
-
-        let imageLeading = myImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
-        let imageTrailing = myImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
-        
-        NSLayoutConstraint.activate([ scrollTop, scrollBottom, scrollLeft,scrollRight, contentTop, contentBottom, contentXCenter, contentYCenter, contentLeft, contentRight, stackTop, stackLead, stackTrail, stackBottom, imageWidth, imageHeight, authorLeading, imageLeading, imageTrailing, authorTrailing, authorTop, authorHeight])
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            scrollView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            scrollView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            contentView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            myImageView.widthAnchor.constraint(equalToConstant: window.frame.width),
+            myImageView.heightAnchor.constraint(equalToConstant: window.frame.width),
+            authorLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            authorLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            authorLabel.topAnchor.constraint(equalTo: stackView.topAnchor),
+            authorLabel.heightAnchor.constraint(equalToConstant: 35),
+            myImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            myImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+        ])
     }
    
-    
     func setup(post: PostModel){
         self.authorLabel.text = post.author
         self.viewsLabel.text = "Views: \(post.views)"
         self.likesLabel.text = "Likes: \(post.likes)"
         self.descriptionLabel.text = post.description
         self.myImageView.image = UIImage(named: "\(post.image)")
-        
     }
 }
