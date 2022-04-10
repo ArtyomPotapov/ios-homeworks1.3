@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import StorigeService
+
 protocol AddLikesDelegate {
     func addLikes(cell: PostTableViewCell)
 }

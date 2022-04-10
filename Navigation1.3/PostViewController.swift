@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import StorigeService
 
 class PostViewController: UIViewController {
     var closure: (() -> String)?

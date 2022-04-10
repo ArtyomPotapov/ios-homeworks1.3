@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 protocol ViewExpandable: AnyObject {
     func expandedView(isExpand: Bool)
 }
@@ -16,13 +17,6 @@ protocol Qwe: AnyObject {
     
 }
 
-struct PostModel {
-    let author: String
-    let description: String
-    let image: String
-    var likes: Int
-    var views: Int
-}
 
 class ProfileViewController: UIViewController, AddLikesDelegate {
     var height: CGFloat = 400
