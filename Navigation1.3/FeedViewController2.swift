@@ -7,11 +7,11 @@
 
 import UIKit
 
-struct Post {
+public struct Post {
     var title: String
 }
 
-class FeedViewController: UIViewController {
+public class FeedViewController2: UIViewController {
 
 var titlePost = Post(title: "Переданный текст")
     
@@ -47,15 +47,9 @@ var titlePost = Post(title: "Переданный текст")
         return button
     }()
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
-        
-        #if DEBUG
         view.backgroundColor = .green
-        #else
-        view.backgroundColor = .red
-        #endif
-
         title = "Лента"
         view.addSubview(myStackView)
         myStackView.addArrangedSubview(firstButton)
@@ -73,13 +67,10 @@ var titlePost = Post(title: "Переданный текст")
     }
     
     @objc func prepareToPost(){
-        let postVC = PostViewController()
-        postVC.titlePost = self.titlePost.title
-        navigationController?.pushViewController(postVC, animated: true)
+       
     }
 
     @objc func prepareToPost2(){
-        let postVC = GestureViewController()
-        navigationController?.pushViewController(postVC, animated: true)
+       
     }
 }

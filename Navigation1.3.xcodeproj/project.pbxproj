@@ -87,7 +87,38 @@
 		50CC0EDD27FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_16.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E7127E4008D00DA13CE /* prikolnye_fotografii_kotov_141_foto_16.jpg */; };
 		50CC0EDE27FE5FAD00DA13CE /* prikolnye_fotografii_kotov_141_foto_33.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50CC0E6227E4008C00DA13CE /* prikolnye_fotografii_kotov_141_foto_33.jpg */; };
 		50CC0EDF27FE5FAD00DA13CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50A2FF9F27BAE513006A437C /* Assets.xcassets */; };
+		50CC0EEF2803957A00DA13CE /* StorigeService.docc in Sources */ = {isa = PBXBuildFile; fileRef = 50CC0EEE2803957A00DA13CE /* StorigeService.docc */; };
+		50CC0EF02803957B00DA13CE /* StorigeService.h in Headers */ = {isa = PBXBuildFile; fileRef = 50CC0EED2803957A00DA13CE /* StorigeService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50CC0EF32803957B00DA13CE /* StorigeService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CC0EEB2803957A00DA13CE /* StorigeService.framework */; };
+		50CC0EF42803957B00DA13CE /* StorigeService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50CC0EEB2803957A00DA13CE /* StorigeService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		50CC0EFA280395E300DA13CE /* TabBar2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC0EF9280395E300DA13CE /* TabBar2.swift */; };
+		50CC0EFC2803961200DA13CE /* FeedViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC0EFB2803961200DA13CE /* FeedViewController2.swift */; };
+		50CC0EFE2803962A00DA13CE /* LogInViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC0EFD2803962A00DA13CE /* LogInViewController2.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		50CC0EF12803957B00DA13CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50A2FF8B27BAE50D006A437C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50CC0EEA2803957A00DA13CE;
+			remoteInfo = StorigeService;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		50CC0EF52803957B00DA13CE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				50CC0EF42803957B00DA13CE /* StorigeService.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		50232A1927D55038006A657E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -134,6 +165,12 @@
 		50CC0EB027F0D0C200DA13CE /* DetailDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDescriptionViewController.swift; sourceTree = "<group>"; };
 		50CC0EE327FE5FAD00DA13CE /* Navigation1.3 copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Navigation1.3 copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CC0EE427FE5FAD00DA13CE /* Navigation1.3 copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Navigation1.3 copy-Info.plist"; path = "/Users/artyompotapov/Desktop/Нетология 5 блок iOS-dev интерфейс приложения/Navigation1.3/Navigation1.3 copy-Info.plist"; sourceTree = "<absolute>"; };
+		50CC0EEB2803957A00DA13CE /* StorigeService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StorigeService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50CC0EED2803957A00DA13CE /* StorigeService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StorigeService.h; sourceTree = "<group>"; };
+		50CC0EEE2803957A00DA13CE /* StorigeService.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = StorigeService.docc; sourceTree = "<group>"; };
+		50CC0EF9280395E300DA13CE /* TabBar2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar2.swift; sourceTree = "<group>"; };
+		50CC0EFB2803961200DA13CE /* FeedViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController2.swift; sourceTree = "<group>"; };
+		50CC0EFD2803962A00DA13CE /* LogInViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,10 +178,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50CC0EF32803957B00DA13CE /* StorigeService.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		50CC0EC727FE5FAD00DA13CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50CC0EE82803957A00DA13CE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -158,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				50A2FF9527BAE50D006A437C /* Navigation1.3 */,
+				50CC0EEC2803957A00DA13CE /* StorigeService */,
 				50A2FF9427BAE50D006A437C /* Products */,
 				50CC0EE427FE5FAD00DA13CE /* Navigation1.3 copy-Info.plist */,
 			);
@@ -168,6 +214,7 @@
 			children = (
 				50A2FF9327BAE50D006A437C /* Navigation1.3.app */,
 				50CC0EE327FE5FAD00DA13CE /* Navigation1.3 copy.app */,
+				50CC0EEB2803957A00DA13CE /* StorigeService.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -178,10 +225,13 @@
 				50CC0E8727E400A300DA13CE /* Photos */,
 				50A2FF9627BAE50D006A437C /* AppDelegate.swift */,
 				50A2FFB227C018A0006A437C /* TabBar.swift */,
+				50CC0EF9280395E300DA13CE /* TabBar2.swift */,
 				50A2FFAE27BB1001006A437C /* PostViewController.swift */,
 				50A2FFB027BB21E9006A437C /* InfoViewController.swift */,
 				5086D29827CC553900EBB547 /* LogInViewController.swift */,
+				50CC0EFD2803962A00DA13CE /* LogInViewController2.swift */,
 				50A2FFAA27BB0E9B006A437C /* FeedViewController.swift */,
+				50CC0EFB2803961200DA13CE /* FeedViewController2.swift */,
 				50A2FF9F27BAE513006A437C /* Assets.xcassets */,
 				50A2FFAC27BB0F10006A437C /* ProfileViewController.swift */,
 				50CC0EAE27ECDD4E00DA13CE /* GestureViewController.swift */,
@@ -228,7 +278,27 @@
 			path = Photos;
 			sourceTree = "<group>";
 		};
+		50CC0EEC2803957A00DA13CE /* StorigeService */ = {
+			isa = PBXGroup;
+			children = (
+				50CC0EED2803957A00DA13CE /* StorigeService.h */,
+				50CC0EEE2803957A00DA13CE /* StorigeService.docc */,
+			);
+			path = StorigeService;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		50CC0EE62803957A00DA13CE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50CC0EF02803957B00DA13CE /* StorigeService.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		50A2FF9227BAE50D006A437C /* Navigation1.3 */ = {
@@ -238,10 +308,12 @@
 				50A2FF8F27BAE50D006A437C /* Sources */,
 				50A2FF9027BAE50D006A437C /* Frameworks */,
 				50A2FF9127BAE50D006A437C /* Resources */,
+				50CC0EF52803957B00DA13CE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				50CC0EF22803957B00DA13CE /* PBXTargetDependency */,
 			);
 			name = Navigation1.3;
 			productName = Navigation1.3;
@@ -265,6 +337,24 @@
 			productReference = 50CC0EE327FE5FAD00DA13CE /* Navigation1.3 copy.app */;
 			productType = "com.apple.product-type.application";
 		};
+		50CC0EEA2803957A00DA13CE /* StorigeService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50CC0EF82803957B00DA13CE /* Build configuration list for PBXNativeTarget "StorigeService" */;
+			buildPhases = (
+				50CC0EE62803957A00DA13CE /* Headers */,
+				50CC0EE72803957A00DA13CE /* Sources */,
+				50CC0EE82803957A00DA13CE /* Frameworks */,
+				50CC0EE92803957A00DA13CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StorigeService;
+			productName = StorigeService;
+			productReference = 50CC0EEB2803957A00DA13CE /* StorigeService.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -276,6 +366,9 @@
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					50A2FF9227BAE50D006A437C = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					50CC0EEA2803957A00DA13CE = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
 				};
@@ -295,6 +388,7 @@
 			targets = (
 				50A2FF9227BAE50D006A437C /* Navigation1.3 */,
 				50CC0EB427FE5FAD00DA13CE /* Navigation1.3 copy */,
+				50CC0EEA2803957A00DA13CE /* StorigeService */,
 			);
 		};
 /* End PBXProject section */
@@ -360,6 +454,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		50CC0EE92803957A00DA13CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -411,7 +512,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		50CC0EE72803957A00DA13CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50CC0EFC2803961200DA13CE /* FeedViewController2.swift in Sources */,
+				50CC0EFA280395E300DA13CE /* TabBar2.swift in Sources */,
+				50CC0EEF2803957A00DA13CE /* StorigeService.docc in Sources */,
+				50CC0EFE2803962A00DA13CE /* LogInViewController2.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		50CC0EF22803957B00DA13CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50CC0EEA2803957A00DA13CE /* StorigeService */;
+			targetProxy = 50CC0EF12803957B00DA13CE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		50A2FFA127BAE513006A437C /* LaunchScreen.storyboard */ = {
@@ -544,6 +664,7 @@
 		50A2FFA827BAE513006A437C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -571,6 +692,7 @@
 		50A2FFA927BAE513006A437C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -651,6 +773,68 @@
 			};
 			name = Release;
 		};
+		50CC0EF62803957B00DA13CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7M366N87RZ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = homeqwerty.StorigeService;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		50CC0EF72803957B00DA13CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7M366N87RZ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = homeqwerty.StorigeService;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -677,6 +861,15 @@
 			buildConfigurations = (
 				50CC0EE127FE5FAD00DA13CE /* Debug */,
 				50CC0EE227FE5FAD00DA13CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50CC0EF82803957B00DA13CE /* Build configuration list for PBXNativeTarget "StorigeService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50CC0EF62803957B00DA13CE /* Debug */,
+				50CC0EF72803957B00DA13CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
