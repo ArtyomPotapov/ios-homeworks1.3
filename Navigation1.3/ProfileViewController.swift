@@ -1,19 +1,7 @@
-//
-//  ProfileViewController.swift
-//  Navigation1.3
-//
-//  Created by Artyom Potapov on 15.02.2022.
-//
-
 import UIKit
 
-protocol ViewExpandable: AnyObject {
-    func expandedView(isExpand: Bool)
-}
-
-protocol Qwe: AnyObject {
-    func qwe()
-    
+protocol ExpandProtocol: AnyObject {
+    func expanded()
 }
 
 struct PostModel {
@@ -160,8 +148,6 @@ class ProfileViewController: UIViewController, AddLikesDelegate {
             self.xCircle.alpha = self.isExpanded ? 1 : 0
             self.myImageView.alpha = self.isExpanded ? 1 : 0
             self.view.layoutIfNeeded()
-        } completion: { _ in
-
         }
     }
 }
@@ -212,7 +198,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
-        return 280
+        return 200
         } else {
             return 0
         }
@@ -242,9 +228,9 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     
 }
 
-extension ProfileViewController: Qwe {
+extension ProfileViewController: ExpandProtocol {
     
-        func qwe(){
+        func expanded(){
             self.isExpanded.toggle()
             self.widthViewConstraint?.constant = self.isExpanded ? self.view.frame.width : 120
             self.heightViewConstraint?.constant = self.isExpanded ? self.view.frame.width : 120
@@ -264,8 +250,6 @@ extension ProfileViewController: Qwe {
                 self.xCircle.alpha = self.isExpanded ? 1 : 0
                 self.myImageView.alpha = self.isExpanded ? 1 : 0
                 self.view.layoutIfNeeded()
-            } completion: { _ in
-
             }
         }
 }

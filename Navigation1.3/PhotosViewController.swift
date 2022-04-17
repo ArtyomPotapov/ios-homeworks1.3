@@ -1,10 +1,3 @@
-//
-//  PhotosViewController.swift
-//  Navigation1.3
-//
-//  Created by Artyom Potapov on 18.03.2022.
-//
-
 import UIKit
 
 class PhotosViewController: UIViewController {

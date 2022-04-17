@@ -1,10 +1,3 @@
-//
-//  PrifileHeaderView.swift
-//  Navigation1.3
-//
-//  Created by Artyom Potapov on 18.02.2022.
-//
-
 import UIKit
 
 class ProfileHeaderView: UIView, UITextFieldDelegate {
@@ -19,7 +12,7 @@ class ProfileHeaderView: UIView, UITextFieldDelegate {
     
     private var isButtonAbove = true
     private var buttonTitle = "Set status"
-    var delegate: ViewExpandable?
+//    var delegate: ViewExpandable?
     var delegate2: Expandable?
     let tapGestureRecognizer = UITapGestureRecognizer()
     
@@ -59,7 +52,7 @@ class ProfileHeaderView: UIView, UITextFieldDelegate {
     
     @objc func handleTap(_ tapGR:UITapGestureRecognizer){
         guard tapGestureRecognizer === tapGR else { return }
-        self.delegate2?.qwe()
+        self.delegate2?.expandAvatar()
 
     }
     
@@ -91,9 +84,9 @@ class ProfileHeaderView: UIView, UITextFieldDelegate {
             statusTextField.text = setStatusTextField.text ?? ""
         }
         
-        buttonTopConstraint.constant = isButtonAbove ? 70 : 16
+//        buttonTopConstraint.constant = isButtonAbove ? 70 : 16
         buttonTitle = isButtonAbove ? "Show status" : "Set status"
-            self.delegate?.expandedView(isExpand: self.isButtonAbove)
+//            self.delegate?.expandedView(isExpand: self.isButtonAbove)
             self.isButtonAbove.toggle()
             self.showStatusButton.setTitle(self.buttonTitle, for: .normal)
             self.showStatusButton.setTitle(self.buttonTitle, for: .highlighted)

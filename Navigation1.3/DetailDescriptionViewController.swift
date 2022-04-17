@@ -1,10 +1,3 @@
-//
-//  DetailDescriptionViewController.swift
-//  Navigation1.3
-//
-//  Created by Artyom Potapov on 27.03.2022.
-//
-
 import UIKit
 
 class DetailDescriptionViewController: UIViewController {

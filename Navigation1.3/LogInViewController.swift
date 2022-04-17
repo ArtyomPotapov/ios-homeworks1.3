@@ -1,10 +1,3 @@
-//
-//  LogInViewController.swift
-//  Navigation1.3
-//
-//  Created by Artyom Potapov on 28.02.2022.
-//
-
 import Foundation
 import UIKit
 

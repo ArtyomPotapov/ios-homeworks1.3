@@ -1,10 +1,3 @@
-//
-//  PhotoTableViewCell.swift
-//  Navigation1.3
-//
-//  Created by Artyom Potapov on 17.03.2022.
-//
-
 import UIKit
 
 class PhotoTableViewCell: UITableViewCell {
@@ -122,7 +115,7 @@ class PhotoTableViewCell: UITableViewCell {
     func setConstraints(){
         
         NSLayoutConstraint.activate([
-            verticalStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
+            verticalStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
             verticalStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
             verticalStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
             verticalStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),

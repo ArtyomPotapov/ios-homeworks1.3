@@ -1,10 +1,3 @@
-//
-//  PostTableViewCell.swift
-//  Navigation1.3
-//
-//  Created by Artyom Potapov on 07.03.2022.
-//
-
 import UIKit
 protocol AddLikesDelegate {
     func addLikes(cell: PostTableViewCell)
@@ -15,8 +8,6 @@ class PostTableViewCell: UITableViewCell {
     let tapLikes = UITapGestureRecognizer()
     var delegate: AddLikesDelegate?
     
-
-
     private lazy var bottomStackView: UIStackView = {
        let buttomStackView = UIStackView()
         buttomStackView.axis = .horizontal
@@ -125,7 +116,6 @@ class PostTableViewCell: UITableViewCell {
         self.likesLabel.text = "Likes: \(post.likes)"
         self.descriptionLabel.text = post.description
         self.myImageView.image = UIImage(named: "\(post.image)")
-        
     }
     
     @objc func addLikes(){
@@ -133,8 +123,5 @@ class PostTableViewCell: UITableViewCell {
         self.likesLabel.text = "Likes: \(newCount + 1)"
         delegate?.addLikes(cell: self)
         layoutIfNeeded()
-
     }
-    
-    
 }

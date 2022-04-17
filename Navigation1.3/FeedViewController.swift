@@ -1,10 +1,3 @@
-//
-//  FeedViewController.swift
-//  Navigation1.3
-//
-//  Created by Artyom Potapov on 15.02.2022.
-//
-
 import UIKit
 
 struct Post {

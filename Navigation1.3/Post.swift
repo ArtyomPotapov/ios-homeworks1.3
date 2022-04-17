@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  Navigation1.3
-//
-//  Created by Artyom Potapov on 06.03.2022.
-//
-
 import Foundation
 
 var post1 = PostModel(author: "ТАСС", description: "Для доставки грузов в Калининградскую область задействуют международный аэропорт «Храброво» и паромную линию «Балтийск – Усть-Луга», сообщает информагентство ТАСС.", image: "scale_2400", likes: 123, views: 321)

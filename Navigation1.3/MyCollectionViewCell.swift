@@ -1,10 +1,3 @@
-//
-//  MyCollectionViewCell.swift
-//  Navigation1.3
-//
-//  Created by Artyom Potapov on 19.03.2022.
-//
-
 import UIKit
 
 class MyCollectionViewCell: UICollectionViewCell {
